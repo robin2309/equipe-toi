@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipetoi.fr - Trousses de Secours</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <style>
+    /* Category Header */
+    .category-header {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/api/placeholder/1200/400');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+    }
+
+    .category-header .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .category-header p {
+      font-size: 1.1rem;
+      max-width: 700px;
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .breadcrumb a:hover {
+      color: white;
+    }
+
+    .breadcrumb span {
+      color: white;
+    }
+
+    /* Category Info */
+    .category-info {
+      padding: 60px 0;
+    }
+
+    .info-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 32px;
+      box-shadow: var(--box-shadow);
+      margin-bottom: 40px;
+    }
+
+    .info-card h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .info-card p {
+      margin-bottom: 16px;
+    }
+
+    .info-card ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+
+    .info-card li {
+      margin-bottom: 8px;
+    }
+
+    .info-card .info-highlight {
+      background-color: var(--light-color);
+      border-left: 4px solid var(--accent-color);
+      padding: 16px;
+      margin: 16px 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 40px 0 80px;
+    }
+
+    .section-title {
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    .products-container {
+      position: relative;
+    }
+
+    .products-scroll {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      padding: 10px 0 20px;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-color) #e0e0e0;
+    }
+
+    .products-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .products-scroll::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 4px;
+    }
+
+    .products-scroll::-webkit-scrollbar-thumb {
+      background-color: var(--accent-color);
+      border-radius: 4px;
+    }
+
+    .product-card {
+      flex: 0 0 300px;
+      background-color: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      font-weight: 600;
+      height: 60px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .product-description {
+      color: #666;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      height: 60px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+    }
+
+    .rating-value {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    .rating-max {
+      color: #999;
+      font-size: 0.9rem;
+      align-self: flex-end;
+    }
+
+    .product-price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+    }
+
+    .btn-amazon {
+      width: 100%;
+      padding: 12px;
+      background-color: #FF9900;
+      border: none;
+      border-radius: var(--border-radius);
+      color: white;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-amazon:hover {
+      background-color: #E88A00;
+      transform: translateY(-2px);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background-color: var(--accent-color);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: white;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .scroll-btn:hover {
+      background-color: var(--accent-color);
+      color: white;
+    }
+
+    .scroll-btn.prev {
+      left: -20px;
+    }
+
+    .scroll-btn.next {
+      right: -20px;
+    }
+
+    .scroll-btn.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: var(--accent-color);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .social-links a {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Call to Action */
+    .cta-section {
+      background-color: var(--light-color);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--primary-color);
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: #666;
+    }
+
+    .btn-primary {
+      padding: 12px 28px;
+      border-radius: var(--border-radius);
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background-color: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .category-header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .products-container {
+        padding: 0 20px;
+      }
+      
+      .scroll-btn {
+        display: none;
+      }
+      
+      .product-card {
+        flex: 0 0 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .category-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .product-card {
+        flex: 0 0 260px;
+      }
+      
+      .info-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-shield-alt"></i>
+        Equipetoi.fr
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#categories">Catégories</a></li>
+        <li><a href="#blog">Blog conseils</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Category Header -->
+  <section class="category-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Accueil</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="#categories">Catégories</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Trousses de Secours</span>
+      </div>
+      <h1>Trousses de Secours</h1>
+      <p>Les essentiels pour répondre efficacement aux urgences médicales selon les recommandations officielles.</p>
+    </div>
+  </section>
+
+  <!-- Category Info -->
+  <section class="category-info">
+    <div class="container">
+      <div class="info-card">
+        <h2>Pourquoi avoir une trousse de secours ?</h2>
+        <p>Une trousse de secours complète est un élément essentiel dans tout foyer, véhicule ou lieu de travail. En cas d'urgence, disposer des bons outils et produits médicaux peut faire toute la différence en attendant l'arrivée des secours professionnels.</p>
+        
+        <div class="info-highlight">
+          <strong>Les autorités françaises recommandent</strong> que chaque foyer dispose d'une trousse de premiers secours adaptée à la taille du foyer et aux besoins spécifiques de ses membres.
+        </div>
+        
+        <p>Les trousses que nous avons sélectionnées répondent aux critères suivants :</p>
+        <ul>
+          <li>Conformité aux normes médicales européennes</li>
+          <li>Présence des équipements essentiels recommandés par les autorités sanitaires</li>
+          <li>Durabilité et facilité d'accès en situation d'urgence</li>
+          <li>Rapport qualité-prix optimal</li>
+        </ul>
+        
+        <p>Notre système de notation sur 10 évalue les trousses selon ces critères pour vous aider à faire le meilleur choix possible pour votre sécurité et celle de vos proches.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Meilleures Trousses de Secours</h2>
+        <p>Découvrez notre sélection des meilleures trousses de premiers secours disponibles sur le marché.</p>
+      </div>
+      
+      <div class="products-container">
+        <button class="scroll-btn prev" aria-label="Produit précédent">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="products-scroll">
+          <!-- Product 1 -->
+          <div class="product-card">
+            <div class="product-badge">Top Vente</div>
+            <img src="/api/placeholder/400/300" alt="Trousse de secours familiale" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Trousse de Secours Familiale Premium 150 pièces</h3>
+              <p class="product-description">Kit complet avec 150 articles médicaux essentiels pour toute la famille, conforme aux normes européennes.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">9.5</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">34,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product 2 -->
+          <div class="product-card">
+            <img src="/api/placeholder/400/300" alt="Trousse de secours compacte" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Trousse de Secours Compacte 100 pièces</h3>
+              <p class="product-description">Format compact idéal pour les déplacements et voyages, avec tous les essentiels pour les urgences.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">8.7</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">24,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-badge">Meilleur Rapport</div>
+            <img src="/api/placeholder/400/300" alt="Trousse de secours professionnelle" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Trousse de Secours Professionnelle 220 pièces</h3>
+              <p class="product-description">Kit professionnel avec équipements médicaux avancés, idéal pour les environnements à risque.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">9.2</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">45,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product 4 -->
+          <div class="product-card">
+            <img src="/api/placeholder/400/300" alt="Mini trousse de secours" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Mini Trousse de Secours 50 pièces</h3>
+              <p class="product-description">Format ultra-compact pour sac à main ou boîte à gants, avec les essentiels pour les petites urgences quotidiennes.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">7.8</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">15,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product 5 -->
+          <div class="product-card">
+            <img src="/api/placeholder/400/300" alt="Trousse de secours sport" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Trousse de Secours Sport & Outdoor 120 pièces</h3>
+              <p class="product-description">Spécialement conçue pour les activités sportives et de plein air, avec produits spécifiques pour traumatismes.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">8.9</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">29,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+          
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="product-badge">Premium</div>
+            <img src="/api/placeholder/400/300" alt="Trousse de secours avancée" class="product-img">
+            <div class="product-content">
+              <h3 class="product-title">Trousse de Secours Avancée 300 pièces</h3>
+              <p class="product-description">Kit ultra-complet pour situations critiques, avec équipements médicaux avancés et manuel d'urgence détaillé.</p>
+              <div class="product-meta">
+                <div class="product-rating">
+                  <span class="rating-value">9.8</span>
+                  <span class="rating-max">/10</span>
+                </div>
+                <div class="product-price">59,99 €</div>
+              </div>
+              <a href="#" class="btn-amazon">
+                <i class="fab fa-amazon"></i>
+                Voir sur Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <button class="scroll-btn next" aria-label="Produit suivant">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Être préparé, c'est être protégé</h2>
+      <p>Investir dans une trousse de secours de qualité est un geste simple mais crucial pour la sécurité de votre famille. Explorez nos autres catégories pour compléter votre équipement d'urgence.</p>
+      <a href="#categories" class="btn-primary">
+        <i class="fas fa-shield-alt"></i>
+        Voir toutes les catégories
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Equipetoi.fr</h3>
+          <p>Votre partenaire de confiance pour la préparation aux situations d'urgence avec des solutions adaptées aux recommandations officielles.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Catégories</h3>
+          <ul class="footer-links">
+            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="#">Sacs d'évacuation</a></li>
+            <li><a href="#">Batteries & chargeurs</a></li>
+            <li><a href="#">Réserves alimentaires</a></li>
+            <li><a href="#">Éclairage d'urgence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liens Utiles</h3>
+          <ul class="footer-links">
+            <li><a href="#">Guides pratiques</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Blog conseils</a></li>
+            <li><a href="#">Recommandations officielles</a></li>
+            <li><a href="#">Témoignages</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> info@equipetoi.fr</li>
+            <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+            <li><i class="fas fa-map-marker-alt"></i> Paris, France</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Equipetoi.fr - Tous droits réservés | Site partenaire Amazon</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      });
+
+      // Product Scroll Navigation
+      const scrollContainer = document.querySelector('.products-scroll');
+      const prevBtn = document.querySelector('.scroll-btn.prev');
+      const nextBtn = document.querySelector('.scroll-btn.next');
+      const productCards = document.querySelectorAll('.product-card');
+      const cardWidth = productCards[0].offsetWidth + 24; // Card width + gap
+      
+      // Check scroll position on load and scroll events
+      function checkScrollPosition() {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const scrollWidth = scrollContainer.scrollWidth;
+        const clientWidth = scrollContainer.clientWidth;
+        
+        // Enable/disable prev button based on scroll position
+        if (scrollLeft <= 0) {
+          prevBtn.classList.add('disabled');
+        } else {
+          prevBtn.classList.remove('disabled');
+        }
+        
+        // Enable/disable next button based on scroll position
+        if (scrollLeft >= scrollWidth - clientWidth - 10) {
+          nextBtn.classList.add('disabled');
+        } else {
+          nextBtn.classList.remove('disabled');
+        }
+      }
+      
+      // Initial check
+      checkScrollPosition();
+      
+      // Check on scroll
+      scrollContainer.addEventListener('scroll', checkScrollPosition);
+      
+      // Scroll left on prev button click
+      prevBtn.addEventListener('click', function() {
+        scrollContainer.scrollBy({ left: -cardWidth * 2, behavior: 'smooth' });
+      });
+      
+      // Scroll right on next button click
+      nextBtn.addEventListener('click', function() {
+        scrollContainer.scrollBy({ left: cardWidth * 2, behavior: 'smooth' });
+      });
+
+      // Smooth Scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

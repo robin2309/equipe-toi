@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipetoi.fr - Kits d'urgence et solutions de préparation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <style>
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: url('/api/placeholder/1200/800');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: var(--border-radius);
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      background-color: #2563EB;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-secondary {
+      background-color: white;
+      color: var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: #f3f3f3;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #666;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 32px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+      background-color: var(--light-color);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .feature-icon i {
+      font-size: 32px;
+      color: var(--accent-color);
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--primary-color);
+    }
+
+    /* Categories Section */
+    .categories {
+      padding: 100px 0;
+      background-color: var(--light-color);
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .category-card {
+      position: relative;
+      height: 300px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+    }
+
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .category-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      color: white;
+      transition: var(--transition);
+    }
+
+    .category-card:hover .category-overlay {
+      background: linear-gradient(to top, rgba(10, 46, 92, 0.85), rgba(10, 46, 92, 0.5));
+    }
+
+    .category-overlay h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .category-overlay p {
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .category-card:hover .category-overlay p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .view-more {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background-color: var(--accent-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+    }
+
+    .category-card:hover .view-more {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 100px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+
+    .stat-card {
+      background-color: white;
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2.4rem;
+      margin-bottom: 24px;
+    }
+
+    .cta p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: var(--accent-color);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .social-links a {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .feature-card, .stat-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-shield-alt"></i>
+        Equipetoi.fr
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#categories">Catégories</a></li>
+        <li><a href="#blog">Blog conseils</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Soyez Préparé à Toute Éventualité</h1>
+      <p>Equipetoi.fr vous guide dans le choix des meilleurs kits d'urgence et équipements de survie selon les recommandations officielles françaises et belges.</p>
+      <div class="btn-group">
+        <a href="#categories" class="btn">
+          <i class="fas fa-box-open"></i>
+          Découvrir les kits
+        </a>
+        <a href="#blog" class="btn btn-secondary">
+          <i class="fas fa-book"></i>
+          Consulter nos conseils
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Pourquoi nous faire confiance ?</h2>
+        <p>Equipetoi.fr vous accompagne dans votre préparation avec expertise, transparence et fiabilité.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Produits Sélectionnés</h3>
+          <p>Tous les produits recommandés sont minutieusement testés et évalués selon des critères rigoureux de qualité, durabilité et rapport qualité-prix.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-clipboard-check"></i>
+          </div>
+          <h3>Conformité Officielle</h3>
+          <p>Nos recommandations s'alignent sur les directives officielles françaises et belges en matière de préparation aux situations d'urgence.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>Notation Transparente</h3>
+          <p>Système d'évaluation sur 10 points basé sur des critères objectifs pour vous aider à faire les meilleurs choix selon vos besoins spécifiques.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="categories">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nos Catégories de Produits</h2>
+        <p>Découvrez notre sélection d'équipements essentiels pour faire face aux situations imprévues.</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card">
+          <img src="/api/placeholder/600/800" alt="Trousses de secours" class="category-img">
+          <div class="category-overlay">
+            <h3>Trousses de Secours</h3>
+            <p>Des kits médicaux complets pour répondre efficacement aux urgences sanitaires.</p>
+            <a href="category-medical.html" class="view-more">
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="category-card">
+          <img src="/api/placeholder/600/800" alt="Sacs d'évacuation" class="category-img">
+          <div class="category-overlay">
+            <h3>Sacs d'Évacuation</h3>
+            <p>Des sacs robustes et pratiques pour emporter l'essentiel en cas d'évacuation rapide.</p>
+            <a href="category-bags.html" class="view-more">
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="category-card">
+          <img src="/api/placeholder/600/800" alt="Batteries et chargeurs" class="category-img">
+          <div class="category-overlay">
+            <h3>Batteries & Chargeurs</h3>
+            <p>Solutions d'alimentation portable pour maintenir vos appareils essentiels en fonctionnement.</p>
+            <a href="category-power.html" class="view-more">
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="category-card">
+          <img src="/api/placeholder/600/800" alt="Réserves alimentaires" class="category-img">
+          <div class="category-overlay">
+            <h3>Réserves Alimentaires</h3>
+            <p>Aliments de longue conservation et solutions de stockage pour votre autonomie.</p>
+            <a href="category-food.html" class="view-more">
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="section-title">
+        <h2>Notre Expertise en Chiffres</h2>
+        <p>Des années d'expérience à votre service pour vous proposer les meilleures solutions de préparation.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Produits analysés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5000+</div>
+          <div class="stat-label">Clients satisfaits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Taux de satisfaction</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Catégories d'équipement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Préparez-vous dès aujourd'hui</h2>
+      <p>Investir dans votre sécurité et celle de vos proches est la décision la plus sage que vous puissiez prendre.</p>
+      <a href="#categories" class="btn">
+        <i class="fas fa-shield-alt"></i>
+        Explorer nos solutions
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Equipetoi.fr</h3>
+          <p>Votre partenaire de confiance pour la préparation aux situations d'urgence avec des solutions adaptées aux recommandations officielles.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Catégories</h3>
+          <ul class="footer-links">
+            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="#">Sacs d'évacuation</a></li>
+            <li><a href="#">Batteries & chargeurs</a></li>
+            <li><a href="#">Réserves alimentaires</a></li>
+            <li><a href="#">Éclairage d'urgence</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Liens Utiles</h3>
+          <ul class="footer-links">
+            <li><a href="#">Guides pratiques</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Blog conseils</a></li>
+            <li><a href="#">Recommandations officielles</a></li>
+            <li><a href="#">Témoignages</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> info@equipetoi.fr</li>
+            <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+            <li><i class="fas fa-map-marker-alt"></i> Paris, France</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Equipetoi.fr - Tous droits réservés | Site partenaire Amazon</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+      });
+
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (navLinks.classList.contains('active')) {
+              navLinks.classList.remove('active');
+              const icon = hamburger.querySelector('i');
+              icon.classList.add('fa-bars');
+              icon.classList.remove('fa-times');
+            }
+          }
+        });
+      });
+
+      // Animate stats on scroll
+      const stats = document.querySelectorAll('.stat-number');
+      const statsSection = document.querySelector('.stats');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            stats.forEach(stat => {
+              const target = parseInt(stat.textContent);
+              const countUp = () => {
+                const value = parseInt(stat.textContent);
+                const time = target / 100;
+                if (value < target) {
+                  stat.textContent = Math.ceil(value + time);
+                  setTimeout(countUp, 30);
+                } else {
+                  stat.textContent = target;
+                  // Add + sign back for stats that had it
+                  if (stat.textContent.endsWith('+')) {
+                    stat.textContent += '+';
+                  }
+                }
+              };
+              // Store the target value and start from 0
+              stat.dataset.target = stat.textContent;
+              stat.textContent = '0';
+              countUp();
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      observer.observe(statsSection);
+    });
+  </script>
+</body>
+</html>
