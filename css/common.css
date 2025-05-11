@@ -5,6 +5,7 @@
   --light-color: #F3F7FC;
   --dark-color: #102442;
   --text-color: #333;
+  --marketing-color: #FF9F1C;
   --border-radius: 8px;
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
@@ -54,6 +55,11 @@ body {
   font-size: 24px;
   color: var(--primary-color);
   text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: 40px;
 }
 
 .logo i {
