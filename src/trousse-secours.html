@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/category-page.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/navbar.css">
   <style>
     /* Call to Action */
     .cta-section {
@@ -120,16 +121,21 @@
   <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="logo">
+      <a href="/" class="logo">
         <img src="/img/logo.webp" class="logo-img" alt="Logo Equipetoi.fr" />
         Equipetoi.fr
       </a>
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="#categories">Catégories</a></li>
-        <li><a href="#blog">Blog conseils</a></li>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/">Accueil</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Catégories <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/categories">Toutes les catégories</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="hamburger">
         <i class="fas fa-bars"></i>
@@ -385,5 +391,6 @@
   </footer>
 
   <script src="/js/category-page.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
 </html>

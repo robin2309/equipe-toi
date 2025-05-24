@@ -9,6 +9,7 @@
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/navbar.css">
   <meta property="og:title" content="ÉquipeToi.fr - Kits d’Urgence Notés et Conseillés" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://equipetoi.fr/" />
@@ -371,12 +372,15 @@
       </a>
       <ul class="nav-links">
         <li><a href="/">Accueil</a></li>
-        <li><a href="/categories">Catégories</a></li>
-        <!--
-          <li><a href="#blog">Blog conseils</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#contact">Contact</a></li>
-        -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">
+            Catégories <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/categories">Toutes les catégories</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
+          </ul>
+        </li>
       </ul>
       <div class="hamburger">
         <i class="fas fa-bars"></i>
@@ -583,5 +587,6 @@
   </footer>
 
   <script src="/js/main.js"></script>
+  <script src="/js/navbar.js"></script>
 </body>
 </html>
