@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipetoi.fr - Kits d'urgence et solutions de préparation</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="description" content="Equipetoi.fr - Votre futur guide pour les kits d'urgence recommandés. Bientôt en ligne !">
+  <title>Equipetoi.fr - En cours de construction</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/footer.css">
+  <meta property="og:title" content="ÉquipeToi.fr - Kits d’Urgence Notés et Conseillés" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://equipetoi.fr/" />
+  <meta property="og:image" content="https://equipetoi.fr/img/og-image.webp" />
+  <meta property="og:description" content="Comparez les meilleurs kits d'urgence et trouvez l'équipement idéal pour vous protéger vous et votre foyer. Recommandations, avis experts, affiliation Amazon." />
+  <meta property="og:site_name" content="Equipetoi.fr" />
+  <meta property="og:locale" content="fr_FR" />
+  <style>
+
+    .maintenance {
+      max-width: 600px;
+      background-color: white;
+      padding: 40px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+    }
+
+    .maintenance h1 {
+      color: var(--primary-color);
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .maintenance p {
+      font-size: 18px;
+      color: var(--dark-color);
+    }
+
+    .maintenance .coming-soon {
+      margin-top: 20px;
+      font-size: 16px;
+      color: var(--accent-color);
+    }
+
+    .spinner {
+      margin: 30px auto;
+      border: 4px solid var(--light-color);
+      border-top: 4px solid var(--accent-color);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 2.4rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #666;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 32px;
+      box-shadow: var(--box-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+      background-color: var(--light-color);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .feature-icon i {
+      font-size: 32px;
+      color: var(--accent-color);
+    }
+
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--primary-color);
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 100px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+
+    .stat-card {
+      background-color: white;
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+
+      h1 {
+        font-size: 2.1rem;
+      }
+      
+      .feature-card, .stat-card {
+        padding: 24px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .gov-links {
+      margin-top: 30px;
+    }
+
+    .gov-links a {
+      display: block;
+      margin-top: 10px;
+      color: var(--accent-color);
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .gov-links a:hover {
+      text-decoration: none;
+      color: var(--secondary-color);
+    }
+
+    .kit-image {
+      margin-top: 40px;
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      width: 450px;
+    }
+
+    .kit-image-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .heroContainer {
+      max-width: 960px;
+      padding: 40px;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      animation: fadeIn 1s ease-in-out;
+      margin-top: 64px;
+    }
+
+    .heroContainerWrapper {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/img/logo.webp" class="logo-img" alt="Logo Equipetoi.fr" />
+        Equipetoi.fr
+      </a>
+      <ul class="nav-links">
+        
+        <!--
+          <li><a href="#blog">Blog conseils</a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        -->
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="heroContainerWrapper">
+  <div class="heroContainer">
+  <h1>Equipetoi.fr arrive bientôt… et vous, êtes-vous prêt ?</h1>
+    <p>
+      Notre plateforme de recommandation de kits d'urgence basés sur Amazon arrive très bientôt. Grâce à notre algorithme d'analyse et de classement, vous pourrez choisir les meilleurs produits pour protéger votre foyer en toute confiance.
+    </p>
+    <div class="gov-links">
+      <p>Ressources officielles pour vous préparer :</p>
+      <a href="https://www.info.gouv.fr/risques/se-preparer-a-une-situation-durgence" target="_blank">Se préparer à une situation d'urgence (Info.gouv.fr)</a>
+      <a href="https://www.info.gouv.fr/upload/media/content/0001/05/7f65dbb18642830b679cf048b0de025a801d93d1.pdf" target="_blank">Guide PDF officiel</a>
+    </div>
+    <div class="kit-image-container">
+      <img class="kit-image" src="/img/kit-urgence.webp" alt="Illustration kit d'urgence gouvernement français">
+    </div>
+    </div>
+</div>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="section-title">
+        <h2>Notre Expertise en Chiffres</h2>
+        <p>Des années d'expérience à votre service pour vous proposer les meilleures solutions de préparation.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Produits analysés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">11</div>
+          <div class="stat-label">Catégories d'équipement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Equipetoi.fr</h3>
+          <p>Votre partenaire de confiance pour la préparation aux situations d'urgence avec des solutions adaptées aux recommandations officielles.</p>
+          <!--
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          -->
+        </div>
+        <!--
+          <div class="footer-col">
+          <h3>Liens Utiles</h3>
+          <ul class="footer-links">
+            <li><a href="#">Guides pratiques</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Blog conseils</a></li>
+            <li><a href="#">Recommandations officielles</a></li>
+            <li><a href="#">Témoignages</a></li>
+          </ul>
+        </div>
+      -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> info@equipetoi.fr</li>
+            <li><i class="fas fa-map-marker-alt"></i> Lyon, France</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Equipetoi.fr - Tous droits réservés | Site partenaire Amazon</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
