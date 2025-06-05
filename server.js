@@ -10,12 +10,12 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 // Route for home
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'wip.html'));
-});
 // app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'src', 'index.html'));
+//   res.sendFile(path.join(__dirname, 'src', 'wip.html'));
 // });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
 
 app.get('/trousse-secours', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'trousse-secours.html'));
