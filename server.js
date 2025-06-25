@@ -21,6 +21,10 @@ app.get('/trousse-secours', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'trousse-secours.html'));
 });
 
+app.get('/sacs-evacuation', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'sacs-evacuation.html'));
+});
+
 app.get('/categories', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'categories.html'));
 });
