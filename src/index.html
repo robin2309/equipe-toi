@@ -316,37 +316,6 @@
       margin: 0 auto 32px;
     }
 
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      }
-      
-      .nav-links.active {
-        display: flex;
-      }
-      
-      .hamburger {
-        display: block;
-      }
-      
-      .btn-group {
-        flex-direction: column;
-      }
-    }
-
     @media (max-width: 576px) {
       .hero h1 {
         font-size: 2rem;
@@ -371,14 +340,15 @@
         Equipetoi.fr
       </a>
       <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
+        <li><a href="#">Accueil</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle">
+          <a href="/categories" class="dropdown-toggle">
             Catégories <i class="fas fa-chevron-down"></i>
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu nav-links">
             <li><a href="/categories">Toutes les catégories</a></li>
             <li><a href="/trousse-secours">Trousses de secours</a></li>
+            <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
           </ul>
         </li>
       </ul>
@@ -458,16 +428,15 @@
             </div>
           </div>
         </a>
-        <div class="category-card">
-          <img src="/img/back-pack.webp" alt="Sacs d'évacuation" class="category-img">
-          <div class="category-overlay">
-            <h3>Sacs d'évacuation</h3>
-            <p>Des sacs robustes et pratiques pour emporter l'essentiel en cas d'évacuation rapide.</p>
-            <span class="view-more-soon">
-              Bientôt disponible
-            </span>
+        <a href="/sacs-evacuation">
+          <div class="category-card">
+            <img src="/img/back-pack.webp" alt="Sacs d'évacuation" class="category-img">
+            <div class="category-overlay">
+              <h3>Sacs d'évacuation</h3>
+              <p>Des sacs robustes et pratiques pour emporter l'essentiel en cas d'évacuation rapide.</p>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="category-card">
           <img src="/img/batteries-chargers.webp" alt="Batteries et chargeurs" class="category-img">
           <div class="category-overlay">
