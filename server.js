@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 
 // Serve static assets (e.g., CSS, images)
 app.use('/css', express.static(path.join(__dirname, 'css')));
