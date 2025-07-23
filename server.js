@@ -29,6 +29,14 @@ app.get('/categories', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'categories.html'));
 });
 
+app.get('/batteries', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'batteries.html'));
+});
+
+app.get('/reserves-alimentaires', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'reserves-alimentaires.html'));
+});
+
 // Fallback for 404
 app.use((req, res) => {
   res.status(404).send('Page non trouvée');

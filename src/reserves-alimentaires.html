@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipetoi.fr - Trousses de Secours</title>
+  <title>Equipetoi.fr - Réserves alimentaires</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta property="og:title" content="Trousse de secours : le comparatif des meilleures options - Equipetoi.fr" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.equipetoi.fr/trousses-secours" />
+
+  <meta name="description" content="Explorez notre sélection d’aliments longue conservation et de solutions de stockage conçues pour renforcer votre autonomie en situation d’urgence.">
+  <meta property="og:title" content="Réserves Alimentaires | Equipetoi.fr">
+  <meta property="og:description" content="Aliments de longue conservation et solutions de stockage pour votre autonomie.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://equipetoi.fr/reserves-alimentaires">
   <meta property="og:image" content="https://equipetoi.fr/img/og-image.webp" />
-  <meta property="og:description" content="Comparez les meilleures trousses de secours selon les recommandations officielles. Produits notés, pratiques et pensés pour protéger votre foyer." />
-  <meta property="og:site_name" content="Equipetoi.fr" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Réserves Alimentaires | Equipetoi.fr">
+  <meta name="twitter:description" content="Aliments de longue conservation et solutions pour votre autonomie.">
+  <meta property="og:image" content="https://equipetoi.fr/img/og-image.webp" />
+  
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/category-page.css">
   <link rel="stylesheet" href="/css/footer.css">
@@ -57,6 +62,64 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .category-header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .products-container {
+        padding: 0 20px;
+      }
+      
+      .scroll-btn {
+        display: none;
+      }
+      
+      .product-card {
+        flex: 0 0 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .category-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .product-card {
+        flex: 0 0 260px;
+      }
+      
+      .info-card {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,10 +138,10 @@
           </a>
           <ul class="dropdown-menu nav-links">
             <li><a href="/categories">Toutes les catégories</a></li>
-            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
             <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
             <li><a href="/batteries">Batteries et chargeurs</a></li>
-            <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
+            <li><a href="#">Réserves alimentaires</a></li>
           </ul>
         </li>
       </ul>
@@ -96,10 +159,10 @@
         <i class="fas fa-chevron-right"></i>
         <a href="/categories">Catégories</a>
         <i class="fas fa-chevron-right"></i>
-        <span>Trousses de Secours</span>
+        <span>Réserves alimentaires</span>
       </div>
-      <h1>Trousses de Secours</h1>
-      <p>Les essentiels pour répondre efficacement aux urgences médicales selon les recommandations officielles.</p>
+      <h1>Réserves alimentaires</h1>
+    <p>Constituez une base alimentaire fiable pour les situations prolongées d’urgence. Découvrez nos produits longue conservation et nos solutions de stockage, testés et notés pour renforcer votre autonomie.</p>
     </div>
   </section>
 
@@ -107,25 +170,25 @@
   <section class="products-section">
     <div class="container">
       <div class="section-title">
-        <h2>Meilleures Trousses de Secours</h2>
-        <p>Découvrez notre sélection des meilleures trousses de premiers secours disponibles sur le marché.</p>
+        <h2>Meilleurs Solutions pour constituer une réserve alimentaire</h2>
+        <p>Découvrez notre sélection de solutions pour constituer une réserve alimentaire disponibles sur le marché.</p>
       </div>
       
       <div class="products-container">
           <!-- Product 1 -->
           <div class="product-card">
             <div class="product-badge">Top Vente</div>
-            <img src="/img/trousse-secours-honyao.webp" alt="Trousse secours 90 pcs HONYAO" 
+            <img src="/img/trousse-secours-honyao.webp" alt="Sac à dos 50L Deuter Aircontact" 
             class="product-img">
             <div class="product-content">
-              <h3 class="product-title">Trousse secours 90 pcs HONYAO</h3>
-              <p class="product-description">Compacte et légère, idéale voiture, maison ou randonnée.</p>
+              <h3 class="product-title">Sac à dos 50L Deuter Aircontact</h3>
+              <p class="product-description">Léger, ajustable et ventilé. Idéal pour l’évacuation ou les longues randos.</p>
               <div class="product-meta">
                 <div class="product-rating">
                   <span class="rating-value">6</span>
                   <span class="rating-max">/10</span>
                 </div>
-                <div class="product-price">16,99 €</div>
+                <div class="product-price">159,90 €</div>
               </div>
               <a href="https://www.amazon.fr/dp/B0B4GWF112" target="_blank" class="btn-amazon">
                 <i class="fab fa-amazon"></i>
@@ -178,36 +241,36 @@
     </div>
   </section>
 
-
   <!-- Category Info -->
   <section class="category-info">
     <div class="container">
       <div class="info-card">
-        <h2>Pourquoi avoir une trousse de secours ?</h2>
-        <p>Une trousse de secours complète est un élément essentiel dans tout foyer, véhicule ou lieu de travail. En cas d'urgence, disposer des bons outils et produits médicaux peut faire toute la différence en attendant l'arrivée des secours professionnels.</p>
-        
+        <h2>Pourquoi constituer des réserves alimentaires ?</h2>
+        <p>En cas de crise prolongée ou d’interruption des approvisionnements, disposer d’une réserve d’aliments longue conservation garantit l’autonomie du foyer. C’est une base essentielle pour faire face sereinement aux imprévus.</p>
+
         <div class="info-highlight">
-          <strong>Les autorités françaises recommandent</strong> que chaque foyer dispose d'une trousse de premiers secours adaptée à la taille du foyer et aux besoins spécifiques de ses membres.
+          <strong>Les autorités recommandent</strong> de prévoir un stock alimentaire de plusieurs jours à domicile, adapté aux besoins de chaque membre du foyer, y compris en cas de coupure de courant ou d’accès limité à l’eau.
         </div>
-        
-        <p>Les trousses que nous avons sélectionnées répondent aux critères suivants :</p>
+
+        <p>Nous avons sélectionné des produits sûrs, pratiques et durables, évalués selon des critères stricts :</p>
         <ul>
-          <li>Conformité aux normes médicales européennes</li>
-          <li>Présence des équipements essentiels recommandés par les autorités sanitaires</li>
-          <li>Durabilité et facilité d'accès en situation d'urgence</li>
-          <li>Rapport qualité-prix optimal</li>
+          <li>Durée de conservation et qualité nutritionnelle</li>
+          <li>Facilité de préparation (avec ou sans cuisson)</li>
+          <li>Conditionnement compact et résistant</li>
+          <li>Compatibilité avec une alimentation variée</li>
+          <li>Excellent rapport volume/prix/calories</li>
         </ul>
-        
-        <p>Notre système de notation sur 10 évalue les trousses selon ces critères pour vous aider à faire le meilleur choix possible pour votre sécurité et celle de vos proches.</p>
+        <p>Notre système de notation sur 10 vous permet de choisir les réserves les mieux adaptées à votre situation. L’objectif : vous garantir autonomie et tranquillité d’esprit.</p>
       </div>
     </div>
   </section>
+
 
   <!-- Call to Action -->
   <section class="cta-section">
     <div class="container">
       <h2>Être préparé, c'est être protégé</h2>
-      <p>Investir dans une trousse de secours de qualité est un geste simple mais crucial pour la sécurité de votre famille. Explorez nos autres catégories pour compléter votre équipement d'urgence.</p>
+      <p>Constituer une réserve alimentaire, c'est anticiper. Complétez votre préparation avec nos autres équipements essentiels.</p>
       <a href="#categories" class="btn-primary">
         <i class="fas fa-shield-alt"></i>
         Voir toutes les catégories
@@ -234,10 +297,10 @@
         <div class="footer-col">
           <h3>Catégories</h3>
           <ul class="footer-links">
-            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
             <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
             <li><a href="/batteries">Batteries et chargeurs</a></li>
-            <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
+            <li><a href="#">Réserves alimentaires</a></li>
             <!--<li><a href="#">Sacs d'évacuation</a></li>
             <li><a href="#">Batteries & chargeurs</a></li>
             <li><a href="#">Réserves alimentaires</a></li>

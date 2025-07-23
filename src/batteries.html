@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipetoi.fr - Trousses de Secours</title>
+  <title>Equipetoi.fr - Batteries externes et chargeurs</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <meta property="og:title" content="Trousse de secours : le comparatif des meilleures options - Equipetoi.fr" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.equipetoi.fr/trousses-secours" />
+
+  <meta name="description" content="Découvrez notre sélection de batteries externes et chargeurs portables pour garder vos appareils essentiels chargés en toute circonstance. Idéal pour les kits d'urgence.">
+  <meta property="og:title" content="Batteries & Chargeurs | Equipetoi.fr">
+  <meta property="og:description" content="Solutions d'alimentation portable pour maintenir vos appareils essentiels en fonctionnement.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://equipetoi.fr/batteries">
   <meta property="og:image" content="https://equipetoi.fr/img/og-image.webp" />
-  <meta property="og:description" content="Comparez les meilleures trousses de secours selon les recommandations officielles. Produits notés, pratiques et pensés pour protéger votre foyer." />
-  <meta property="og:site_name" content="Equipetoi.fr" />
-  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Batteries & Chargeurs | Equipetoi.fr">
+  <meta name="twitter:description" content="Solutions d'alimentation portable pour vos kits d'urgence.">
+  <meta property="og:image" content="https://equipetoi.fr/img/og-image.webp" />
+
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/category-page.css">
   <link rel="stylesheet" href="/css/footer.css">
@@ -57,6 +62,64 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .category-header h1 {
+        font-size: 2rem;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .hamburger {
+        display: block;
+      }
+      
+      .products-container {
+        padding: 0 20px;
+      }
+      
+      .scroll-btn {
+        display: none;
+      }
+      
+      .product-card {
+        flex: 0 0 280px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .category-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .product-card {
+        flex: 0 0 260px;
+      }
+      
+      .info-card {
+        padding: 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -75,9 +138,9 @@
           </a>
           <ul class="dropdown-menu nav-links">
             <li><a href="/categories">Toutes les catégories</a></li>
-            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
             <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
-            <li><a href="/batteries">Batteries et chargeurs</a></li>
+            <li><a href="#">Batteries et chargeurs</a></li>
             <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
           </ul>
         </li>
@@ -96,10 +159,10 @@
         <i class="fas fa-chevron-right"></i>
         <a href="/categories">Catégories</a>
         <i class="fas fa-chevron-right"></i>
-        <span>Trousses de Secours</span>
+        <span>Batteries et chargeurs</span>
       </div>
-      <h1>Trousses de Secours</h1>
-      <p>Les essentiels pour répondre efficacement aux urgences médicales selon les recommandations officielles.</p>
+      <h1>Batteries et chargeurs</h1>
+      <p>Assurez-vous de rester connecté et alimenté en toute circonstance grâce à notre sélection de batteries externes et chargeurs testés et notés. Des solutions fiables, adaptées aux situations d’urgence.</p>
     </div>
   </section>
 
@@ -107,25 +170,25 @@
   <section class="products-section">
     <div class="container">
       <div class="section-title">
-        <h2>Meilleures Trousses de Secours</h2>
-        <p>Découvrez notre sélection des meilleures trousses de premiers secours disponibles sur le marché.</p>
+        <h2>Meilleurs Batteries externes et chargeurs</h2>
+        <p>Découvrez notre sélection de batteries externes et chargeurs disponibles sur le marché.</p>
       </div>
       
       <div class="products-container">
           <!-- Product 1 -->
           <div class="product-card">
             <div class="product-badge">Top Vente</div>
-            <img src="/img/trousse-secours-honyao.webp" alt="Trousse secours 90 pcs HONYAO" 
+            <img src="/img/trousse-secours-honyao.webp" alt="Sac à dos 50L Deuter Aircontact" 
             class="product-img">
             <div class="product-content">
-              <h3 class="product-title">Trousse secours 90 pcs HONYAO</h3>
-              <p class="product-description">Compacte et légère, idéale voiture, maison ou randonnée.</p>
+              <h3 class="product-title">Sac à dos 50L Deuter Aircontact</h3>
+              <p class="product-description">Léger, ajustable et ventilé. Idéal pour l’évacuation ou les longues randos.</p>
               <div class="product-meta">
                 <div class="product-rating">
                   <span class="rating-value">6</span>
                   <span class="rating-max">/10</span>
                 </div>
-                <div class="product-price">16,99 €</div>
+                <div class="product-price">159,90 €</div>
               </div>
               <a href="https://www.amazon.fr/dp/B0B4GWF112" target="_blank" class="btn-amazon">
                 <i class="fab fa-amazon"></i>
@@ -178,27 +241,26 @@
     </div>
   </section>
 
-
   <!-- Category Info -->
   <section class="category-info">
     <div class="container">
       <div class="info-card">
-        <h2>Pourquoi avoir une trousse de secours ?</h2>
-        <p>Une trousse de secours complète est un élément essentiel dans tout foyer, véhicule ou lieu de travail. En cas d'urgence, disposer des bons outils et produits médicaux peut faire toute la différence en attendant l'arrivée des secours professionnels.</p>
-        
+        <h2>Pourquoi une batterie portable est-elle essentielle ?</h2>
+        <p>En situation d’urgence, l’accès à l’électricité peut être compromis. Une batterie externe ou un chargeur autonome permet de maintenir en fonctionnement vos équipements critiques : téléphone, lampe, radio, GPS… Des outils vitaux pour rester informé et en sécurité.</p>
+  
         <div class="info-highlight">
-          <strong>Les autorités françaises recommandent</strong> que chaque foyer dispose d'une trousse de premiers secours adaptée à la taille du foyer et aux besoins spécifiques de ses membres.
+          <strong>Les recommandations en matière de préparation</strong> incluent la présence d’une source d’alimentation portable dans tout kit d’urgence, afin de garantir la communication et l’éclairage en cas de coupure prolongée.
         </div>
-        
-        <p>Les trousses que nous avons sélectionnées répondent aux critères suivants :</p>
+  
+        <p>Nous avons sélectionné des modèles fiables et adaptés à un usage d’urgence, notés selon des critères rigoureux :</p>
         <ul>
-          <li>Conformité aux normes médicales européennes</li>
-          <li>Présence des équipements essentiels recommandés par les autorités sanitaires</li>
-          <li>Durabilité et facilité d'accès en situation d'urgence</li>
-          <li>Rapport qualité-prix optimal</li>
+          <li>Capacité réelle et vitesse de charge</li>
+          <li>Compatibilité avec divers appareils</li>
+          <li>Autonomie en situation hors réseau</li>
+          <li>Robustesse et durabilité</li>
+          <li>Options solaires ou à dynamo pour recharge autonome</li>
         </ul>
-        
-        <p>Notre système de notation sur 10 évalue les trousses selon ces critères pour vous aider à faire le meilleur choix possible pour votre sécurité et celle de vos proches.</p>
+        <p>Grâce à notre système de notation sur 10, vous identifiez en un coup d’œil les meilleures options selon votre environnement et vos besoins. Notre objectif : vous aider à rester alimenté, même hors réseau.</p>
       </div>
     </div>
   </section>
@@ -207,7 +269,7 @@
   <section class="cta-section">
     <div class="container">
       <h2>Être préparé, c'est être protégé</h2>
-      <p>Investir dans une trousse de secours de qualité est un geste simple mais crucial pour la sécurité de votre famille. Explorez nos autres catégories pour compléter votre équipement d'urgence.</p>
+      <p>Choisir une batterie externe fiable, c'est anticiper. Complétez votre préparation avec nos autres équipements essentiels.</p>
       <a href="#categories" class="btn-primary">
         <i class="fas fa-shield-alt"></i>
         Voir toutes les catégories
@@ -234,9 +296,9 @@
         <div class="footer-col">
           <h3>Catégories</h3>
           <ul class="footer-links">
-            <li><a href="#">Trousses de secours</a></li>
+            <li><a href="/trousse-secours">Trousses de secours</a></li>
             <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
-            <li><a href="/batteries">Batteries et chargeurs</a></li>
+            <li><a href="#">Batteries et chargeurs</a></li>
             <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
             <!--<li><a href="#">Sacs d'évacuation</a></li>
             <li><a href="#">Batteries & chargeurs</a></li>
