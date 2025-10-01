@@ -162,7 +162,7 @@
 .product-title {
   font-size: 1.2rem;
   color: var(--primary-color);
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   font-weight: 600;
   height: 60px;
   overflow: hidden;
@@ -184,12 +184,12 @@
 .product-meta {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .product-rating {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
   font-weight: 700;
 }
@@ -197,12 +197,17 @@
 .product-disclaimer-price {
   display: flex;
   align-items: right;
-  margin-bottom: 16px;
   width: 100%;
   justify-content: flex-end;
   font-size: 11px;
   color: #c0bfbf;
   align-items: center;
+}
+
+.product-price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .price-info-icon {
@@ -217,7 +222,6 @@
 .rating-max {
   color: #999;
   font-size: 0.9rem;
-  align-self: flex-end;
 }
 
 .product-price {
@@ -240,6 +244,7 @@
   gap: 8px;
   text-decoration: none;
   transition: var(--transition);
+  margin-bottom: 16px;
 }
 
 .btn-amazon:hover {
