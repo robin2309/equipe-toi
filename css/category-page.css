@@ -185,7 +185,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
 }
 
 .product-rating {
@@ -193,6 +192,21 @@
   align-items: center;
   gap: 8px;
   font-weight: 700;
+}
+
+.product-disclaimer-price {
+  display: flex;
+  align-items: right;
+  margin-bottom: 16px;
+  width: 100%;
+  justify-content: flex-end;
+  font-size: 11px;
+  color: #c0bfbf;
+  align-items: center;
+}
+
+.price-info-icon {
+  margin-right: 3px;
 }
 
 .rating-value {

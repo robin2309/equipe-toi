@@ -8,6 +8,8 @@ const port = process.env.PORT || 3000;
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use('/sitemap.xml', express.static(path.join(__dirname, 'static/sitemap.xml')));
+app.use('/robots.txt', express.static(path.join(__dirname, 'static/robots.txt')));
 
 // Route for home
 // app.get('/', (req, res) => {

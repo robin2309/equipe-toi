@@ -59,75 +59,6 @@
       justify-content: center;
     }
 
-    /* Features Section */
-    .features {
-      padding: 100px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
-
-    .section-title h2 {
-      font-size: 2.4rem;
-      color: var(--primary-color);
-      margin-bottom: 16px;
-      font-weight: 700;
-    }
-
-    .section-title p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #666;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
-    .feature-card {
-      background-color: white;
-      border-radius: var(--border-radius);
-      padding: 32px;
-      box-shadow: var(--box-shadow);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-icon {
-      background-color: var(--light-color);
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .feature-icon i {
-      font-size: 32px;
-      color: var(--accent-color);
-    }
-
-    .feature-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-      color: var(--primary-color);
-    }
-
     /* Categories Section */
     .categories {
       padding: 100px 0;
@@ -360,10 +291,6 @@
   <!-- Categories Section -->
   <section id="categories" class="categories">
     <div class="container">
-      <div class="section-title">
-        <h2>Nos catégories de produits</h2>
-        <p>Découvrez notre sélection d'équipements essentiels pour faire face aux situations imprévues.</p>
-      </div>
       <div class="categories-grid">
         <a href="/trousse-secours">
           <div class="category-card">
@@ -432,24 +359,23 @@
       </div>
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-award"></i>
+          <div class="feature-icon feature-icon__large">
+            <img src="/img/gouv-fr.webp" class="gouv-img" />
           </div>
-          <h3>Produits Sélectionnés</h3>
-          <p>Tous les produits recommandés sont minutieusement testés et évalués selon des critères rigoureux de qualité, durabilité et rapport qualité-prix.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-clipboard-check"></i>
+          <h3>Conformité officielle</h3>
+          <p class="gouv-kit-subtitle">Nos recommandations s'alignent sur les directives officielles en matière de préparation aux situations d'urgence.</p>
+          <div class="btn-group">
+            <a href="https://www.info.gouv.fr/upload/media/content/0001/05/7f65dbb18642830b679cf048b0de025a801d93d1.pdf" target="_blank" class="btn">
+              <i class="fa-solid fa-arrow-right arrow-icon"></i>
+              Consulter le kit du gouvernement
+            </a>
           </div>
-          <h3>Conformité Officielle</h3>
-          <p>Nos recommandations s'alignent sur les directives officielles françaises et belges en matière de préparation aux situations d'urgence.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <i class="fas fa-star"></i>
           </div>
-          <h3>Notation Transparente</h3>
+          <h3>Notation transparente</h3>
           <p>Système d'évaluation sur 10 points basé sur des critères objectifs pour vous aider à faire les meilleurs choix selon vos besoins spécifiques.</p>
         </div>
       </div>
