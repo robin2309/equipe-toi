@@ -193,44 +193,54 @@
       transform: translateY(0);
     }
 
-    /* Stats Section */
-    .stats {
-      padding: 100px 0;
-    }
-
-    .stats-grid {
+    .testimonials-grid {
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .stat-card {
-      background-color: white;
-      padding: 32px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--box-shadow);
+    .testimonial-card {
+      background-color: #ffffff;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       text-align: center;
-      transition: var(--transition);
     }
 
-    .stat-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    .testimonial-photo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      border: 3px solid #3b82f6;
     }
 
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent-color);
-      margin-bottom: 8px;
+    .testimonial-text {
+      font-size: 1.125rem;
+      color: #4b5563;
+      margin-bottom: 1rem;
     }
 
-    .stat-label {
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      font-weight: 500;
+    .testimonial-author {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1f2937;
     }
 
+    /* Responsive breakpoints */
+    @media (min-width: 640px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
     /* CTA Section */
     .cta {
       background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
@@ -316,12 +326,17 @@
     </div>
   </section>
 
-  <!-- Features Section -->
+
+  <!-- Who are we Section -->
   <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Pourquoi nous faire confiance ?</h2>
-        <p>Equipetoi.fr vous accompagne dans votre préparation avec expertise, transparence et fiabilité.</p>
+        <h2>Qui sommes-nous ?</h2>
+        <p><b>Equipetoi.fr</b> est un <b>site indépendant de conseil</b> spécialisé dans la préparation aux situations d'urgence.</p>
+        <p>Nous ne vendons aucun produit : nous sélectionnons, testons et recommandons les meilleurs équipements disponibles sur <b>Amazon</b>, grâce à un système <b>d'affiliation transparent</b>.</p>
+        <p></p>
+        <p>Passionnés par la <b>résilience pratique</b>, nous mettons notre expertise au service de celles et ceux qui veulent protéger leur foyer, s'équiper intelligemment et gagner en autonomie.</p>
+        <p>Notre mission : vous guider avec des comparatifs fiables, des notes claires et des conseils issus des recommandations officielles.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -414,39 +429,46 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="stats">
+  <section class="features">
     <div class="container">
       <div class="section-title">
-        <h2>Notre expertise en chiffres</h2>
-        <p>Des années d'expérience à votre service pour vous proposer les meilleures solutions de préparation.</p>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">500+</div>
-          <div class="stat-label">Produits analysés</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">5000+</div>
-          <div class="stat-label">Clients satisfaits</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">98%</div>
-          <div class="stat-label">Taux de satisfaction</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">6</div>
-          <div class="stat-label">Catégories d'équipement</div>
-        </div>
+        <h2>Ils nous font confiance</h2>
       </div>
     </div>
+    <div class="testimonials-grid">
+      
+      <div class="testimonial-card">
+        <img src="/img/test1.webp" alt="Photo de Sophie" class="testimonial-photo">
+        <p class="testimonial-text">
+          « Grâce à Equipetoi.fr, j’ai su exactement quoi acheter pour protéger ma famille. Le site est clair, les conseils sont pertinents et les produits de qualité. »
+        </p>
+        <p class="testimonial-author">— Robin</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="/img/test2.webp" alt="Photo de Sophie" class="testimonial-photo">
+        <p class="testimonial-text">
+          « Je ne savais pas par où commencer, et leurs guides m’ont aidé à constituer un kit d’urgence complet. Super approche, je recommande ! »
+        </p>
+        <p class="testimonial-author">— Loïc</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="/img/test3.webp" alt="Photo de Sophie" class="testimonial-photo">
+        <p class="testimonial-text">
+          « Des comparatifs clairs, des liens Amazon pratiques, et surtout des infos fiables. On sent qu’il y a des pros derrière. »
+        </p>
+        <p class="testimonial-author">— Justine</p>
+      </div>
+
+    </div>
   </section>
+  
 
   <!-- CTA Section -->
   <section class="cta">
     <div class="container">
       <h2>Préparez-vous dès aujourd'hui</h2>
-      <p>Investir dans votre sécurité et celle de vos proches est la décision la plus sage que vous puissiez prendre.</p>
       <a href="/categories" class="btn">
         <i class="fas fa-shield-alt"></i>
         Explorer nos solutions
