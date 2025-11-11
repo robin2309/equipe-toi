@@ -73,6 +73,10 @@ body {
 
 .gouv-kit-subtitle {
   margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .gouv-img {
@@ -109,27 +113,117 @@ body {
   color: #666;
 }
 
+.title h3 {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+  margin-bottom: 48px;
 }
 
 .feature-card {
-  background-color: white;
-  border-radius: var(--border-radius);
-  padding: 32px;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: white;
+  padding: 32px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.features-footer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  gap: 32px;
+}
+
+.features-footer > div {
+  flex: 1;
+  max-width: 50%;
+}
+
+.features-footer .reassurance-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px 100px 16px 16px;
+}
+
+.features-footer .feature-icon__large {
+  background-color: white;
+  border-radius: 50%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.features-footer .btn-group {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.features-footer-content {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.feature-icon__large-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 920px) {
+  .features-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px;
+  }
+
+  .features-footer > div {
+    max-width: 100%;
+  }
+
+  .features-footer .gouv-kit-subtitle {
+    text-align: center;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-footer {
+    padding: 32px;
+  }
 }
 
 .feature-icon {

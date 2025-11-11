@@ -98,10 +98,6 @@
   .hamburger {
     display: block;
   }
-  
-  .btn-group {
-    flex-direction: column;
-  }
 
   .dropdown .dropdown-menu {
     position: relative;
