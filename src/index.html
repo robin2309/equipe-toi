@@ -269,6 +269,129 @@
       margin: 0 auto 32px;
     }
 
+    /* Image CTA Section */
+    .image-cta-section-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .image-cta-section-link:hover .image-cta-section {
+      transform: scale(1.02);
+    }
+
+    .image-cta-section {
+      position: relative;
+      min-height: 400px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .image-cta-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .image-cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(315deg, rgba(10, 46, 92, 0.6), rgba(26, 74, 137, 0.85));
+      z-index: 1;
+    }
+
+    .image-cta-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .image-cta-content h3 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      text-align: left;
+      margin-bottom: 16px;
+    }
+
+    .image-cta-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 500px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0;
+    }
+
+    .image-cta-content .btn,
+    .image-cta-content .btn-marketing {
+      align-self: flex-end;
+    }
+
+    .btn-marketing {
+      background-color: var(--marketing-color);
+      color: white;
+      padding: 14px 32px;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(255, 159, 28, 0.3);
+    }
+
+    .btn-marketing:hover {
+      background-color: #E68A00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 159, 28, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .image-cta-section {
+        min-height: 400px;
+      }
+
+      .image-cta-content {
+        padding: 32px;
+      }
+
+      .image-cta-content h3 {
+        font-size: 2.1rem;
+      }
+
+      .image-cta-subtitle {
+        font-size: 1.1rem;
+        max-width: 100%;
+      }
+    }
+
     @media (max-width: 576px) {
       .hero h1 {
         font-size: 2rem;
@@ -280,6 +403,29 @@
       
       .feature-card, .stat-card {
         padding: 24px;
+      }
+
+      .image-cta-section {
+        min-height: 450px;
+      }
+
+      .image-cta-content {
+        padding: 24px;
+      }
+
+      .image-cta-content h3 {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+      }
+
+      .image-cta-subtitle {
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+
+      .btn-marketing {
+        padding: 12px 24px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -318,12 +464,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1>Soyez préparé à toute éventualité</h1>
-      <p>Equipetoi.fr vous guide dans le choix des meilleurs kits d'urgence et équipements de survie selon les recommandations officielles.</p>
+      <h1>Soyez préparé face aux risques</h1>
+      <p>Equipetoi.fr vous guide dans la préparation de votre kit d'urgence selon les recommandations officielles.</p>
       <div class="btn-group">
-        <a href="/categories" class="btn">
+        <a href="#features" class="btn">
           <i class="fas fa-box-open"></i>
-          Découvrir les kits
+          Découvrir nos solutions
         </a>
         <!--
           <a href="#blog" class="btn btn-secondary">
@@ -337,7 +483,114 @@
 
 
   <!-- Who are we Section -->
-  <section class="features">
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Notre guide en cas de crise</h2>
+      </div>
+      
+      <!-- Image CTA Section -->
+      <a href="/reserves-alimentaires" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/canned-food.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>Boire et manger</h3>
+              <p class="image-cta-subtitle">Aliments de longue conservation et solutions de stockage pour votre autonomie</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              Comment boire et manger en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/divers" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/divers.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>Avoir chaud</h3>
+              <p class="image-cta-subtitle">Faire face au froid en cas de crise avec des solutions de survie</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              Se maintenir au chaud en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/trousse-secours" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/first-aid.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>Se soigner</h3>
+              <p class="image-cta-subtitle">Des kits médicaux complets pour répondre efficacement aux urgences sanitaires</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              Se soigner en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/radios" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/radio.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>S'informer</h3>
+              <p class="image-cta-subtitle">Restez informé même sans réseau grâce à des radios d'urgence</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              S'informer en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <a href="/sacs-evacuation" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/back-pack.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>Se déplacer</h3>
+              <p class="image-cta-subtitle">Des sacs robustes et pratiques pour emporter l'essentiel en cas d'évacuation rapide</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              Se déplacer en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+      
+      <a href="/batteries" class="image-cta-section-link">
+        <div class="image-cta-section">
+          <img src="/img/batteries.webp" alt="Background" class="image-cta-bg" />
+          <div class="image-cta-content">
+            <div>
+              <h3>Avoir une autonomie énergétique</h3>
+              <p class="image-cta-subtitle">Solutions d'alimentation portable pour maintenir vos appareils essentiels en fonctionnement</p>
+            </div>
+            <span class="btn-marketing">
+              <i class="fa-solid fa-arrow-right"></i>
+              Autonomie énergétique en cas de crise
+            </span>
+          </div>
+        </div>
+      </a>
+      
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="categories">
     <div class="container">
       <div class="section-title">
         <h2>Qui sommes-nous ?</h2>
@@ -378,74 +631,6 @@
           </a>
         </div>
       </div>
-    </div>
-    
-  </section>
-
-  <!-- Categories Section -->
-  <section id="categories" class="categories">
-    <div class="container">
-      <div class="section-title">
-        <h2>Nos catégories de produits</h2>
-        <p>Découvrez notre sélection d'équipements essentiels pour faire face aux situations imprévues.</p>
-      </div>
-      <div class="categories-grid">
-        <a href="/trousse-secours">
-          <div class="category-card">
-            <img src="/img/first-aid.webp" alt="Trousses de secours" class="category-img">
-            <div class="category-overlay">
-              <h3>Trousses de secours</h3>
-              <p>Des kits médicaux complets pour répondre efficacement aux urgences sanitaires.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/sacs-evacuation">
-          <div class="category-card">
-            <img src="/img/back-pack.webp" alt="Sacs d'évacuation" class="category-img">
-            <div class="category-overlay">
-              <h3>Sacs d'évacuation</h3>
-              <p>Des sacs robustes et pratiques pour emporter l'essentiel en cas d'évacuation rapide.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/batteries">
-          <div class="category-card">
-            <img src="/img/batteries.webp" alt="Batteries et chargeurs" class="category-img">
-            <div class="category-overlay">
-              <h3>Batteries & Chargeurs</h3>
-              <p>Solutions d'alimentation portable pour maintenir vos appareils essentiels en fonctionnement.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/reserves-alimentaires">
-          <div class="category-card">
-            <img src="/img/canned-food.webp" alt="Réserves alimentaires" class="category-img">
-            <div class="category-overlay">
-              <h3>Réserves Alimentaires</h3>
-              <p>Aliments de longue conservation et solutions de stockage pour votre autonomie.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/radios">
-          <div class="category-card">
-            <img src="/img/radio.webp" alt="Radios" class="category-img">
-            <div class="category-overlay">
-              <h3>Radios</h3>
-              <p>Restez informé même sans réseau grâce à des radios d'urgence fiables.</p>
-            </div>
-          </div>
-        </a>
-        <a href="/divers">
-          <div class="category-card">
-            <img src="/img/divers.webp" alt="Equipements complémentaires" class="category-img">
-            <div class="category-overlay">
-              <h3>Equipements complémentaires</h3>
-              <p>Des équipements complémentaires pour renforcer votre kit d’urgence : protection contre le froid, l’humidité, etc.</p>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
   </section>
 
   <section class="features">
@@ -455,7 +640,6 @@
       </div>
     </div>
     <div class="testimonials-grid">
-      
       <div class="testimonial-card">
         <img src="/img/test1.webp" alt="Photo de Robin" class="testimonial-photo">
         <p class="testimonial-text">
@@ -475,7 +659,7 @@
       <div class="testimonial-card">
         <img src="/img/test3.webp" alt="Photo de Justine" class="testimonial-photo">
         <p class="testimonial-text">
-          « Des comparatifs clairs, des liens Amazon pratiques, et surtout des infos fiables. On sent qu’il y a des pros derrière. »
+          « Des liens Amazon pratiques, des infos fiables. On sent qu’il y a des pros derrière. »
         </p>
         <p class="testimonial-author">— Justine</p>
       </div>
@@ -483,18 +667,6 @@
     </div>
   </section>
   
-
-  <!-- CTA Section -->
-  <section class="cta">
-    <div class="container">
-      <h2>Préparez-vous dès aujourd'hui</h2>
-      <a href="/categories" class="btn">
-        <i class="fas fa-shield-alt"></i>
-        Explorer nos solutions
-      </a>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
