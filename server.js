@@ -11,11 +11,16 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 app.use('/sitemap.xml', express.static(path.join(__dirname, 'static/sitemap.xml')));
 app.use('/robots.txt', express.static(path.join(__dirname, 'static/robots.txt')));
+// Serve JSON product data
+app.use('/data', express.static(path.join(__dirname, 'data')));
 
 // Load partials (nav/footer) once at startup
 let navHtml = '';
 let footerHtml = '';
 let headHtml = '';
+let ctaHtml = '';
+let aboutHtml = '';
+let headCommonHtml = '';
 try {
   navHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf8');
 } catch (err) {
@@ -31,6 +36,21 @@ try {
 } catch (err) {
   console.warn('analytics partial not found:', err.message);
 }
+try {
+  ctaHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'cta.html'), 'utf8');
+} catch (err) {
+  console.warn('cta partial not found:', err.message);
+}
+try {
+  aboutHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'about.html'), 'utf8');
+} catch (err) {
+  console.warn('about partial not found:', err.message);
+}
+try {
+  headCommonHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'head-common.html'), 'utf8');
+} catch (err) {
+  console.warn('head-common partial not found:', err.message);
+}
 
 function renderPage(res, pageFilePath) {
   fs.readFile(pageFilePath, 'utf8', (err, data) => {
@@ -39,13 +59,17 @@ function renderPage(res, pageFilePath) {
       return res.status(500).send('Erreur serveur');
     }
 
-    // Insert analytics/head partial before closing </head>
-    let out = data.replace(/<\/head>/i, headHtml + '\n</head>');
+  // Insert head-common and analytics/head partials before closing </head>
+  let out = data.replace(/<\/head>/i, (headCommonHtml || '') + '\n' + (headHtml || '') + '\n</head>');
 
     // Insert nav after the opening <body> tag
     out = out.replace(/<body([^>]*)>/i, (match) => {
       return match + '\n' + navHtml;
     });
+
+    // Replace CTA and About placeholders if present
+    out = out.replace(/<!--\s*inject:cta\s*-->/ig, ctaHtml);
+    out = out.replace(/<!--\s*inject:about\s*-->/ig, aboutHtml);
 
     // Insert footer before closing </body>
     out = out.replace(/<\/body>/i, footerHtml + '\n</body>');

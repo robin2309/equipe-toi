@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Equipetoi.fr - Sacs d'évacuation</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta property="og:title" content="Top sacs d'évacuation 72h : comparatif et guide" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Classement des sacs d’évacuation les plus fiables. Équipez votre foyer selon les recommandations officielles. Notes, analyses et liens Amazon." />
@@ -17,19 +14,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sacs d'évacuation 72h - classement et guide 2025" />
   <meta name="twitter:description" content="Avis experts sur les meilleurs sacs d'évacuation disponibles sur Amazon. Préparez-vous efficacement." />
-  <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/category-page.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/navbar.css">
   
-  <style>
-    /* Call to Action */
-    .cta-section { background-color: var(--light-color); padding: 60px 0; text-align: center; }
-    .cta-section h2 { color: var(--primary-color); font-size: 2rem; margin-bottom: 16px; }
-    .cta-section p { max-width: 700px; margin: 0 auto 32px; color: #666; }
-    .btn-primary { padding: 12px 28px; border-radius: var(--border-radius); background-color: var(--accent-color); color: white; font-weight: 600; text-decoration: none; transition: var(--transition); border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-primary:hover { background-color: #2563EB; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); }
-  </style>
+  <!-- Call-to-action styles moved to /css/components/cta.css -->
 </head>
 <body>
   <!-- Navigation injected from partial -->
@@ -55,43 +42,9 @@
         <p>Découvrez notre sélection de sacs d'évacuation disponibles sur le marché.</p>
       </div>
       <div class="products-container">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <div class="product-badge">Top Vente</div>
-          <div class="product-content-wrapper">
-            <img src="/img/products/sacados-deuter.webp" alt="Sac à dos 50L Deuter Aircontact" class="product-img">
-            <div class="product-content">
-              <h3 class="product-title">Sac à dos 50L Deuter Aircontact</h3>
-              <a href="https://amzn.to/4lRdBHD" target="_blank" class="btn-amazon"><i class="fab fa-amazon"></i> Acheter sur Amazon</a>
-              <p class="product-description">Sac de trekking haut de gamme, ultra léger, idéal pour l’évacuation. Dos ventilé, ceinture VariFlex, multiples fixations. Résistant et ergonomique.</p>
-              <div class="product-meta"><div class="product-rating"><span class="rating-value">9</span><span class="rating-max">/10</span></div><div class="product-price-container"><div class="product-price">170 €</div></div></div>
-            </div>
-          </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="product-card">
-          <div class="product-content-wrapper">
-            <img src="/img/products/sacados-rainsmore.webp" alt="Sac à dos 40L Rainsmore Étanche" class="product-img">
-            <div class="product-content">
-              <h3 class="product-title">Sac à dos 40L Rainsmore Étanche</h3>
-              <a href="https://amzn.to/44VISTO" target="_blank" class="btn-amazon"><i class="fab fa-amazon"></i> Acheter sur Amazon</a>
-              <p class="product-description">Résistant, imperméable et ultra-léger, parfait pour la randonnée et l’évacuation. Nylon anti-déchirure, coutures renforcées.</p>
-              <div class="product-meta"><div class="product-rating"><span class="rating-value">8.5</span><span class="rating-max">/10</span></div><div class="product-price-container"><div class="product-price">25,83 €</div></div></div>
-            </div>
-          </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="product-card">
-          <div class="product-content-wrapper">
-            <img src="/img/products/sacados-oreunik.webp" alt="Sac Tactique 45L Oreunik MOLLE" class="product-img">
-            <div class="product-content">
-              <h3 class="product-title">Sac Tactique 45L Oreunik MOLLE</h3>
-              <a href="https://amzn.to/3IOMm1X" target="_blank" class="btn-amazon"><i class="fab fa-amazon"></i> Acheter sur Amazon</a>
-              <p class="product-description">Robuste, étanche, système MOLLE, bretelles rembourrées et multiples compartiments pour organiser votre kit.</p>
-              <div class="product-meta"><div class="product-rating"><span class="rating-value">7</span><span class="rating-max">/10</span></div><div class="product-price-container"><div class="product-price">30,00 €</div></div></div>
-            </div>
-          </div>
-        </div>
+  <product-card product-id="sacs-deuter"></product-card>
+  <product-card product-id="sacs-rainsmore"></product-card>
+  <product-card product-id="sacs-oreunik"></product-card>
       </div>
     </div>
   </section>
@@ -106,14 +59,7 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Être préparé, c'est être protégé</h2>
-      <p>Choisir un sac d'évacuation fiable, c'est anticiper. Complétez votre préparation avec nos autres équipements essentiels.</p>
-      <a href="#categories" class="btn-primary"><i class="fas fa-shield-alt"></i> Voir toutes les catégories</a>
-    </div>
-  </section>
+  <!-- inject:cta -->
 
   <script src="/js/category-page.js"></script>
 </body>

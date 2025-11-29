@@ -1,134 +1,12 @@
 class ProductCard extends HTMLElement {
   static get observedAttributes() {
-    return ['image', 'title', 'amazon', 'description', 'price','rating'];
+    return ['image', 'title', 'amazon', 'description', 'price','rating', 'product-id'];
   }
 
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
-      <style>
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        :host {
-          background-color: white;
-          border-radius: var(--border-radius);
-          box-shadow: var(--box-shadow);
-          overflow: hidden;
-          transition: var(--transition);
-          position: relative;
-          display: block;
-        }
-        :host:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .product-title {
-          font-size: 1.2rem;
-          color: var(--primary-color);
-          margin-bottom: 16px;
-          font-weight: 600;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-        }
-        .product-content-wrapper {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-        .product-img {
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-        }
-        .product-content {
-          padding: 20px;
-          flex-grow: 1;
-          flex-direction: column;
-          display: flex;
-        }
-        .product-description {
-          color: #666;
-          margin-bottom: 16px;
-          font-size: 0.9rem;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          flex-grow: 1;
-        }
-        .btn-amazon {
-          width: 100%;
-          padding: 12px;
-          background-color: #FF9900;
-          border: none;
-          border-radius: var(--border-radius);
-          color: white;
-          font-weight: 600;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          text-decoration: none;
-          transition: var(--transition);
-          margin-bottom: 16px;
-        }
-        .product-description {
-          color: #666;
-          margin-bottom: 16px;
-          font-size: 0.9rem;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          flex-grow: 1;
-        }
-        .product-meta {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-        }
-        .product-rating {
-          display: flex;
-          align-items: baseline;
-          gap: 8px;
-          font-weight: 700;
-        }
-        .product-disclaimer-price {
-          display: flex;
-          align-items: right;
-          width: 100%;
-          justify-content: flex-end;
-          font-size: 11px;
-          color: #c0bfbf;
-          align-items: center;
-        }
-        .product-price-container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-        }
-        .price-info-icon {
-          margin-right: 3px;
-        }
-        .rating-value {
-          color: var(--accent-color);
-          font-size: 1.5rem;
-        }
-        .rating-max {
-          color: #999;
-          font-size: 0.9rem;
-        }
-        .product-price {
-          font-weight: 700;
-          font-size: 1.2rem;
-          color: var(--primary-color);
-        }
-      </style>
       <div class="product-content-wrapper">
         <img class="product-img" alt="">
         <div class="product-content">
@@ -154,6 +32,39 @@ class ProductCard extends HTMLElement {
         </div>
       </div>
     `;
+
+    // Load external CSS into the shadow root. Some browsers don't apply
+    // <link rel="stylesheet"> inside shadow roots reliably, so we fetch
+    // the CSS once and inject a <style> into each shadow root.
+    // Cache the fetched CSS text on the class to avoid repeated network calls.
+    if (ProductCard._cssText) {
+      const style = document.createElement('style');
+      style.textContent = ProductCard._cssText;
+      this.shadowRoot.prepend(style);
+    } else {
+      if (!ProductCard._cssPromise) {
+        ProductCard._cssPromise = fetch('/css/components/product-card.css')
+          .then(r => {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.text();
+          })
+          .then(text => {
+            ProductCard._cssText = text;
+            console.debug('product-card: CSS fetched, length=', text.length);
+            return text;
+          }).catch((err) => {
+            console.error('product-card: failed to fetch CSS', err);
+            return '';
+          });
+      }
+      // When the CSS is loaded, insert it into this shadow root.
+      ProductCard._cssPromise.then((text) => {
+        const style = document.createElement('style');
+        // If fetch failed, provide a minimal fallback so layout isn't completely broken
+        style.textContent = text || `:host{display:block;background:#fff;border:1px solid #eee;padding:8px}`;
+        this.shadowRoot.prepend(style);
+      });
+    }
     this.$img   = this.shadowRoot.querySelector('.product-img');
     this.$title = this.shadowRoot.querySelector('.product-title');
     this.$link  = this.shadowRoot.querySelector('.btn-amazon');
@@ -163,7 +74,30 @@ class ProductCard extends HTMLElement {
   }
 
   connectedCallback() {
-    this.#render();
+    // If product-id is provided, fetch data and render from JSON source
+    if (this.hasAttribute('product-id')) {
+      const pid = this.getAttribute('product-id');
+      // cache on the constructor to avoid refetching repeatedly
+      if (!ProductCard._productsPromise) {
+        ProductCard._productsPromise = fetch('/data/products.json').then(r => r.json()).catch(() => ({}));
+      }
+      ProductCard._productsPromise.then((map) => {
+        const data = map && map[pid];
+        if (data) {
+          // set attributes from data to reuse existing render logic
+          Object.keys(data).forEach(k => {
+            if (k === 'id' || k === 'page') return;
+            // Only set attributes that the component observes
+            if (['image','title','amazon','description','price','rating'].includes(k)) {
+              this.setAttribute(k, data[k]);
+            }
+          });
+        }
+        this.#render();
+      }).catch(() => this.#render());
+    } else {
+      this.#render();
+    }
   }
 
   attributeChangedCallback() {
