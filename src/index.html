@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Equipetoi.fr - Kits d'urgence et solutions de préparation</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="stylesheet" href="/css/common.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/navbar.css">
   <meta property="og:title" content="ÉquipeToi.fr - Kits d’Urgence Notés et Conseillés" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://equipetoi.fr/" />
@@ -18,27 +10,6 @@
   <meta property="og:site_name" content="Equipetoi.fr" />
   <meta property="og:locale" content="fr_FR" />
 
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="28dac75e-9f45-4ba0-ace4-a72021937918"></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17721940698"></script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'AW-17721940698');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KCE7XPV7D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-7KCE7XPV7D');
-  </script>
 
   <style>
     /* Hero Section */
@@ -446,35 +417,7 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="/" class="logo">
-        <img src="/img/logo.webp" class="logo-img" alt="Logo Equipetoi.fr" />
-        Equipetoi.fr
-      </a>
-      <ul class="nav-links">
-        <li><a href="#">Accueil</a></li>
-        <li class="dropdown">
-          <a href="/categories" class="dropdown-toggle">
-            Catégories <i class="fas fa-chevron-down"></i>
-          </a>
-          <ul class="dropdown-menu nav-links">
-            <li><a href="/categories">Toutes les catégories</a></li>
-            <li><a href="/trousse-secours">Trousses de secours</a></li>
-            <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
-            <li><a href="/batteries">Batteries et chargeurs</a></li>
-            <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
-            <li><a href="/radios">Radios</a></li>
-            <li><a href="/divers">Equipements complémentaires</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="hamburger">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </nav>
+  <!-- Navigation injected from partial -->
 
   <!-- Hero Section -->
   <section class="hero">
@@ -629,28 +572,7 @@
     </div>
   </section>
 
-  <!-- Categories Section -->
-  <section id="categories" class="categories">
-    <div class="container">
-      <div class="section-title">
-        <h2>Qui sommes-nous ?</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <p>Nous sommes indépendants, et spécialisés dans la préparation de kits d'urgence</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <p>Nous sélectionnons, testons et recommandons les meilleurs équipements disponibles sur Amazon, grâce à un système <b>d'affiliation transparent</b></p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- inject:about -->
 
   <section class="features">
     <div class="container">
@@ -686,62 +608,7 @@
     </div>
   </section>
   
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>Equipetoi.fr</h3>
-          <p>Votre partenaire de confiance pour la préparation aux situations d'urgence avec des solutions adaptées aux recommandations officielles.</p>
-          <!--
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-          </div>
-        -->
-        </div>
-        <div class="footer-col">
-          <h3>Catégories</h3>
-          <ul class="footer-links">
-            <li><a href="/trousse-secours">Trousses de secours</a></li>
-            <li><a href="/sacs-evacuation">Sacs d'évacuation</a></li>
-            <li><a href="/batteries">Batteries et chargeurs</a></li>
-            <li><a href="/reserves-alimentaires">Réserves alimentaires</a></li>
-            <li><a href="/radios">Radios</a></li>
-            <li><a href="/divers">Equipements complémentaires</a></li>
-            <!--<li><a href="#">Sacs d'évacuation</a></li>
-            <li><a href="#">Batteries & chargeurs</a></li>
-            <li><a href="#">Réserves alimentaires</a></li>
-            <li><a href="#">Éclairage d'urgence</a></li>-->
-          </ul>
-        </div>
-        <!--<div class="footer-col">
-          <h3>Liens Utiles</h3>
-          <ul class="footer-links">
-            <li><a href="#">Guides pratiques</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Blog conseils</a></li>
-            <li><a href="#">Recommandations officielles</a></li>
-            <li><a href="#">Témoignages</a></li>
-          </ul>
-        </div>-->
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul class="footer-links">
-            <li><i class="fas fa-envelope"></i> info@equipetoi.fr</li>
-            <li><i class="fas fa-map-marker-alt"></i> Lyon, France</li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Equipetoi.fr - Tous droits réservés | Site partenaire Amazon</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="/js/main.js"></script>
-  <script src="/js/navbar.js"></script>
+</body>
+</html>
 </body>
 </html>
