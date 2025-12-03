@@ -1,0 +1,53 @@
+{
+  "logo": {
+    "text": "Equipetoi.fr",
+    "image": "/img/logo.webp",
+    "alt": "Logo Equipetoi.fr",
+    "href": "/"
+  },
+  "mainMenu": [
+    {
+      "text": "Accueil",
+      "href": "/"
+    },
+    {
+      "text": "Kit 72h",
+      "href": "/kit-72h"
+    },
+    {
+      "text": "Catégories",
+      "href": "/categories",
+      "dropdown": true,
+      "submenu": [
+        {
+          "text": "Toutes les catégories",
+          "href": "/categories"
+        },
+        {
+          "text": "Trousses de secours",
+          "href": "/trousse-secours"
+        },
+        {
+          "text": "Sacs d'évacuation",
+          "href": "/sacs-evacuation"
+        },
+        {
+          "text": "Batteries et chargeurs",
+          "href": "/batteries"
+        },
+        {
+          "text": "Réserves alimentaires",
+          "href": "/reserves-alimentaires"
+        },
+        {
+          "text": "Radios",
+          "href": "/radios"
+        },
+        {
+          "text": "Equipements complémentaires",
+          "href": "/divers"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "batteries": {
+    "page": "batteries",
+    "title": "Equipetoi.fr - Batteries externes et chargeurs",
+    "meta": {
+      "description": "Découvrez notre sélection de batteries externes et chargeurs portables pour garder vos appareils essentiels chargés en toute circonstance. Idéal pour les kits d'urgence.",
+      "ogTitle": "Batteries & Chargeurs | Equipetoi.fr",
+      "ogDescription": "Solutions d'alimentation portable pour maintenir vos appareils essentiels en fonctionnement.",
+      "ogUrl": "https://equipetoi.fr/batteries",
+      "twitterTitle": "Batteries & Chargeurs | Equipetoi.fr",
+      "twitterDescription": "Solutions d'alimentation portable pour vos kits d'urgence."
+    },
+    "breadcrumb": "Batteries et chargeurs",
+    "header": {
+      "title": "Batteries et chargeurs",
+      "description": "Assurez-vous de rester connecté et alimenté en toute circonstance grâce à notre sélection de batteries externes et chargeurs. Des solutions fiables, adaptées aux situations d'urgence."
+    },
+    "products": {
+      "title": "Meilleurs Batteries externes et chargeurs",
+      "description": "Découvrez notre sélection de batteries externes et chargeurs disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi une batterie portable est-elle essentielle ?",
+      "description": "En situation d'urgence, l'accès à l'électricité peut être compromis. Une batterie externe ou un chargeur autonome permet de maintenir en fonctionnement vos équipements critiques : téléphone, lampe, radio, GPS… Des outils vitaux pour rester informé et en sécurité.",
+      "highlight": "Les recommandations en matière de préparation incluent la présence d'une source d'alimentation portable dans tout kit d'urgence, afin de garantir la communication et l'éclairage en cas de coupure prolongée.",
+      "selectionIntro": "Nous avons sélectionné des modèles fiables et adaptés à un usage d'urgence, notés selon des critères rigoureux :",
+      "criteria": [
+        "Capacité réelle et vitesse de charge",
+        "Compatibilité avec divers appareils",
+        "Autonomie en situation hors réseau",
+        "Robustesse et durabilité",
+        "Options solaires ou à dynamo pour recharge autonome"
+      ],
+      "conclusion": "Grâce à notre système de notation sur 10, vous identifiez en un coup d'œil les meilleures options selon votre environnement et vos besoins. Notre objectif : vous aider à rester alimenté, même hors réseau."
+    }
+  },
+  "radios": {
+    "page": "radios",
+    "title": "Equipetoi.fr - Radios",
+    "meta": {
+      "description": "Sélection de radios d'urgence à dynamo, solaire ou batterie, pour rester informé en cas de coupure de courant ou d'événements majeurs. Testées et notées.",
+      "ogTitle": "Equipetoi.fr - Radios",
+      "ogDescription": "Sélection de radios d'urgence à dynamo, solaire ou batterie, pour rester informé en cas de coupure de courant ou d'événements majeurs. Testées et notées.",
+      "ogUrl": "https://www.equipetoi.fr/radios"
+    },
+    "breadcrumb": "Radios",
+    "header": {
+      "title": "Radios",
+      "description": "Recevez les informations vitales même sans réseau grâce à notre sélection de radios d'urgence fiables, testées et notées pour les situations critiques."
+    },
+    "products": {
+      "title": "Meilleures Radios",
+      "description": "Découvrez notre sélection des meilleures radios disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi une radio d'urgence est-elle indispensable ?",
+      "description": "En situation de crise, l'accès aux réseaux classiques peut être interrompu. Une radio autonome permet de recevoir les informations officielles, les alertes météo et les consignes de sécurité, même en cas de coupure totale d'électricité ou d'internet.",
+      "highlight": "Les plans de préparation civile recommandent la possession d'une radio à dynamo ou à batterie longue durée, afin de rester informé quelles que soient les conditions extérieures.",
+      "selectionIntro": "Les modèles que nous avons sélectionnés sont évalués selon des critères essentiels :",
+      "criteria": [
+        "Réception des bandes AM/FM et fréquences d'urgence",
+        "Autonomie énergétique (batterie, dynamo, solaire)",
+        "Fonctionnalités supplémentaires utiles : lampe, chargeur USB, alarme",
+        "Solidité et portabilité",
+        "Rapport qualité-prix pertinent"
+      ],
+      "conclusion": "Notre système de notation sur 10 vous guide pour choisir la radio la plus adaptée à votre usage et votre environnement. L'objectif : rester connecté à l'essentiel, même hors réseau."
+    }
+  },
+  "trousse-secours": {
+    "page": "trousse-secours",
+    "title": "Equipetoi.fr - Trousses de Secours",
+    "meta": {
+      "ogTitle": "Trousse de secours : le comparatif des meilleures options - Equipetoi.fr",
+      "ogDescription": "Comparez les meilleures trousses de secours selon les recommandations officielles. Produits notés, pratiques et pensés pour protéger votre foyer.",
+      "ogUrl": "https://www.equipetoi.fr/trousses-secours"
+    },
+    "breadcrumb": "Trousses de Secours",
+    "header": {
+      "title": "Trousses de Secours",
+      "description": "Les essentiels pour répondre efficacement aux urgences médicales selon les recommandations officielles."
+    },
+    "products": {
+      "title": "Meilleures Trousses de Secours",
+      "description": "Découvrez notre sélection des meilleures trousses de premiers secours disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi avoir une trousse de secours ?",
+      "description": "Une trousse de secours complète est un élément essentiel dans tout foyer, véhicule ou lieu de travail. En cas d'urgence, disposer des bons outils et produits médicaux peut faire toute la différence en attendant l'arrivée des secours professionnels.",
+      "highlight": "Les autorités françaises recommandent que chaque foyer dispose d'une trousse de premiers secours adaptée à la taille du foyer et aux besoins spécifiques de ses membres.",
+      "selectionIntro": "Les trousses que nous avons sélectionnées répondent aux critères suivants :",
+      "criteria": [
+        "Conformité aux normes médicales européennes",
+        "Présence des équipements essentiels recommandés par les autorités sanitaires",
+        "Durabilité et facilité d'accès en situation d'urgence",
+        "Rapport qualité-prix optimal"
+      ],
+      "conclusion": "Notre système de notation sur 10 évalue les trousses selon ces critères pour vous aider à faire le meilleur choix possible pour votre sécurité et celle de vos proches."
+    }
+  },
+  "sacs-evacuation": {
+    "page": "sacs-evacuation",
+    "title": "Equipetoi.fr - Sacs d'évacuation",
+    "meta": {
+      "description": "Découvrez notre sélection des meilleurs sacs d'évacuation 72h pour faire face aux urgences. Comparatif, avis, notes sur 10 et conseils de préparation.",
+      "ogTitle": "Top sacs d'évacuation 72h : comparatif et guide",
+      "ogDescription": "Classement des sacs d'évacuation les plus fiables. Équipez votre foyer selon les recommandations officielles. Notes, analyses et liens Amazon.",
+      "ogUrl": "https://www.equipetoi.fr/sacs-evacuation",
+      "twitterTitle": "Sacs d'évacuation 72h - classement et guide 2025",
+      "twitterDescription": "Avis experts sur les meilleurs sacs d'évacuation disponibles sur Amazon. Préparez-vous efficacement."
+    },
+    "breadcrumb": "Sacs d'évacuation",
+    "header": {
+      "title": "Sacs d'évacuation",
+      "description": "Préparez un sac d'évacuation complet et fiable, prêt en cas de crise ou d'urgence, selon les recommandations officielles. Découvrez notre sélection testée et notée."
+    },
+    "products": {
+      "title": "Meilleurs Sacs d'évacuation",
+      "description": "Découvrez notre sélection de sacs d'évacuation disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi un sac d'évacuation est-il indispensable ?",
+      "description": "Un sac d'évacuation — souvent appelé \"sac 72h\" — est conçu pour contenir l'essentiel permettant de survivre en autonomie pendant les premières 72 heures d'une situation d'urgence.",
+      "highlight": "",
+      "selectionIntro": "",
+      "criteria": [],
+      "conclusion": ""
+    }
+  },
+  "reserves-alimentaires": {
+    "page": "reserves-alimentaires",
+    "title": "Equipetoi.fr - Boire et Manger",
+    "meta": {
+      "description": "Explorez notre sélection d'aliments longue conservation et de solutions de stockage conçues pour renforcer votre autonomie en situation d'urgence.",
+      "ogTitle": "Boire et Manger | Equipetoi.fr",
+      "ogDescription": "Aliments de longue conservation et solutions de stockage pour votre autonomie.",
+      "ogUrl": "https://equipetoi.fr/reserves-alimentaires",
+      "twitterTitle": "Boire et Manger | Equipetoi.fr",
+      "twitterDescription": "Aliments de longue conservation et solutions pour votre autonomie."
+    },
+    "breadcrumb": "Boire et Manger",
+    "header": {
+      "title": "Boire et Manger",
+      "description": "Constituez une base alimentaire fiable pour les situations prolongées d'urgence. Découvrez nos produits longue conservation et nos solutions de stockage pour renforcer votre autonomie."
+    },
+    "products": {
+      "title": "Meilleures Solutions pour boire et manger en cas de crise",
+      "description": "Découvrez notre sélection de solutions pour constituer une réserve alimentaire disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi constituer des réserves alimentaires ?",
+      "description": "En cas de crise prolongée ou d'interruption des approvisionnements, disposer d'une réserve d'aliments longue conservation garantit l'autonomie du foyer. C'est une base essentielle pour faire face sereinement aux imprévus.",
+      "highlight": "Les autorités recommandent de prévoir un stock alimentaire de plusieurs jours à domicile, adapté aux besoins de chaque membre du foyer, y compris en cas de coupure de courant ou d'accès limité à l'eau.",
+      "selectionIntro": "Nous avons sélectionné des produits sûrs, pratiques et durables, évalués selon des critères stricts :",
+      "criteria": [
+        "Durée de conservation et qualité nutritionnelle",
+        "Facilité de préparation (avec ou sans cuisson)",
+        "Conditionnement compact et résistant",
+        "Compatibilité avec une alimentation variée",
+        "Excellent rapport volume/prix/calories"
+      ],
+      "conclusion": "Notre système de notation sur 10 vous permet de choisir les réserves les mieux adaptées à votre situation. L'objectif : vous garantir autonomie et tranquillité d'esprit."
+    }
+  },
+  "divers": {
+    "page": "divers",
+    "title": "Equipetoi.fr - Produits divers",
+    "meta": {
+      "description": "Découvrez notre sélection d'équipements essentiels pour compléter votre kit d'urgence : vestes imperméables, couvertures de survie, et accessoires de protection.",
+      "ogTitle": "Equipetoi.fr - Produits divers",
+      "ogDescription": "Découvrez notre sélection d'équipements essentiels pour compléter votre kit d'urgence : vestes imperméables, couvertures de survie, et accessoires de protection.",
+      "ogUrl": "https://www.equipetoi.fr/divers"
+    },
+    "breadcrumb": "Équipements complémentaires",
+    "header": {
+      "title": "Équipements complémentaires",
+      "description": "Renforcez votre kit d'urgence avec des accessoires essentiels : vestes imperméables, couvertures de survie, et autres équipements de protection adaptés à toutes les situations."
+    },
+    "products": {
+      "title": "Meilleures Equipements complémentaires",
+      "description": "Découvrez notre sélection d'équipements complémentaires disponibles sur le marché."
+    },
+    "info": {
+      "title": "Pourquoi ces équipements font-ils la différence ?",
+      "description": "En situation d'urgence, il ne suffit pas d'avoir de quoi manger ou s'éclairer : rester au sec, au chaud, et protégé est tout aussi vital. Des accessoires comme les couvertures de survie, les vestes imperméables ou les ponchos peuvent faire la différence entre confort temporaire et mise en danger.",
+      "highlight": "Les recommandations de base en survie insistent sur la capacité à conserver la chaleur corporelle et se protéger des éléments. Ces équipements assurent ce rôle crucial dans un kit bien pensé.",
+      "selectionIntro": "Nous avons sélectionné des produits testés selon des critères de fiabilité et de praticité :",
+      "criteria": [
+        "Isolation thermique et résistance à l'humidité",
+        "Poids léger et encombrement minimal",
+        "Polyvalence et facilité d'utilisation",
+        "Matériaux durables et robustes",
+        "Bon rapport qualité/prix pour un usage d'urgence"
+      ],
+      "conclusion": "Grâce à notre système de notation sur 10, vous pouvez comparer facilement les meilleurs accessoires pour renforcer votre autonomie, quel que soit votre environnement."
+    }
+  }
+}

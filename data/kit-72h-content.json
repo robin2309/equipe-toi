@@ -1,0 +1,100 @@
+{
+  "page": "kit-72h",
+  "title": "Kit 72h – L'essentiel pour affronter les premières heures d'urgence | Equipetoi.fr",
+  "meta": {
+    "description": "Découvrez notre sélection des produits essentiels pour constituer un kit 72h complet et efficace. Un produit par catégorie, choisi pour sa fiabilité et sa simplicité.",
+    "ogTitle": "Kit 72h – L'essentiel pour affronter les premières heures d'urgence",
+    "ogDescription": "Un kit clair, sans excès, sans stress. Juste l'essentiel pour traverser les premières 72 heures d'une situation d'urgence.",
+    "ogUrl": "https://equipetoi.fr/kit-72h",
+    "keywords": "kit 72h, sac 72h, liste d'urgence, kit d'évacuation, préparation urgence"
+  },
+  "breadcrumb": "Kit 72h",
+  "header": {
+    "title": "Kit 72h – L'essentiel pour affronter les premières heures d'urgence",
+    "introduction": "Lorsque l'imprévu arrive, les premières 72 heures sont souvent les plus difficiles : coupure d'électricité, absence d'eau, évacuation rapide, réseau saturé…\nPour vous aider à réagir calmement et à protéger votre foyer, nous avons réuni sur cette page un produit essentiel par catégorie, sélectionné pour sa simplicité, sa fiabilité et son rapport qualité/prix.\n\nUn kit clair.\nSans excès.\nSans stress.\nJuste l'essentiel pour traverser les premières heures dans de bonnes conditions."
+  },
+  "products": [
+    {
+      "category": "Autonomie énergétique",
+      "productId": "batteries-feelle-27000",
+      "icon": "🔌",
+      "title": "Batterie Solaire FEELLE 27 000 mAh",
+      "whyThisOne": [
+        "Source d'énergie autonome",
+        "Lampe intégrée",
+        "4 appareils possibles",
+        "Fonctionne même sans électricité"
+      ],
+      "description": "Cette batterie solaire vous offre une vraie tranquillité d'esprit : même sans prise, vous pouvez continuer à utiliser vos appareils essentiels. Simple, solide, et idéale pour garder le contact avec vos proches."
+    },
+    {
+      "category": "S'informer",
+      "productId": "radios-solaire",
+      "icon": "📻",
+      "title": "Radio Solaire SOS – AM/FM/SW",
+      "whyThisOne": [
+        "Recharge solaire, dynamo, USB",
+        "Charge un téléphone",
+        "Légère et compacte"
+      ],
+      "description": "Une radio fiable pour ne jamais être coupé du monde. Elle capte les infos essentielles même en cas de coupure totale, et se recharge avec la lumière du jour. Indispensable pour garder le contrôle."
+    },
+    {
+      "category": "Se soigner",
+      "productId": "trousse-molle",
+      "icon": "🚑",
+      "title": "Trousse de Secours MOLLE – 103 pcs (Made in France)",
+      "whyThisOne": [
+        "Qualité pro + certifié CE",
+        "Compacte et rapide à utiliser",
+        "Un excellent équilibre entre prix, contenu et fiabilité"
+      ],
+      "description": "Une trousse complète et robuste pour réagir rapidement aux petits accidents comme aux urgences plus sérieuses. Un indispensable pour garder vos proches en sécurité."
+    },
+    {
+      "category": "Avoir chaud & rester protégé",
+      "productId": "divers-poncho",
+      "icon": "🔥",
+      "title": "Ponchos de survie aZengear (x4)",
+      "whyThisOne": [
+        "Conserve jusqu'à 92 % de la chaleur",
+        "Ultra compact",
+        "Vendu par 4 (parfait pour une famille)"
+      ],
+      "description": "Ces ponchos légers vous protègent du froid, du vent et de la pluie. Ils tiennent dans la poche mais peuvent faire une immense différence dans une situation de stress ou d'attente prolongée."
+    },
+    {
+      "category": "Se déplacer",
+      "productId": "sacs-rainsmore",
+      "icon": "🎒",
+      "title": "Sac Rainsmore Étanche 40L",
+      "whyThisOne": [
+        "Très bon rapport qualité/prix",
+        "Léger",
+        "Imperméable",
+        "Suffisamment grand pour un kit 72h"
+      ],
+      "description": "Un sac simple, solide et résistant à la pluie. Idéal pour préparer un sac d'évacuation sans vous compliquer la vie. Il transporte facilement tout l'essentiel."
+    },
+    {
+      "category": "Boire & manger",
+      "productId": "nrg5-zero",
+      "icon": "🥫",
+      "title": "NRG-5 Végane – Ration 2300 kcal",
+      "whyThisOne": [
+        "Se conserve 20 ans",
+        "Nourrit une personne 1 journée",
+        "Compact et sans cuisson"
+      ],
+      "description": "Une ration durable et facile à stocker, prête à consommer sans aucune préparation. Pratique, compacte et rassurante pour constituer un kit alimentaire minimaliste et efficace."
+    }
+  ],
+  "whySection": {
+    "title": "Pourquoi un kit 72h ?",
+    "content": "Les premières heures d'une crise sont souvent les plus confuses. Disposer d'un kit prêt à l'emploi permet de réagir calmement, de gagner du temps, et de protéger votre foyer sans stress. Ce kit 72h rassemble les bases simples et indispensables recommandées dans tous les plans d'urgence civils."
+  },
+  "cta": {
+    "text": "Voir tous les produits d'Équipetoi.fr",
+    "href": "/categories"
+  }
+}

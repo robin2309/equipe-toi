@@ -1,0 +1,105 @@
+{
+  "page": "homepage",
+  "title": "Equipetoi.fr - Kits d'urgence et solutions de préparation",
+  "meta": {
+    "ogTitle": "ÉquipeToi.fr - Kits d'Urgence Notés et Conseillés",
+    "ogDescription": "Découvrez les équipements les plus fiables pour protéger votre foyer en cas d’imprévu. Conseils simples, avis experts, et matériel sélectionné avec soin.",
+    "ogSiteName": "Equipetoi.fr",
+    "ogLocale": "fr_FR"
+  },
+  "hero": {
+    "title": "Soyez prêt, même lorsque tout devient incertain",
+    "description": "Nous vous guidons pas à pas pour constituer un kit d’urgence simple, efficace et aligné sur les recommandations officielles. Pour protéger ce qui compte le plus, sans vous sentir dépassé.",
+    "cta": {
+      "primary": {
+        "text": "Découvrir les essentiels",
+        "icon": "fas fa-box-open",
+        "href": "#features"
+      }
+    }
+  },
+  "officialRecommendations": {
+    "title": "Un appui sur les recommandations officielles",
+    "description": "Nos conseils suivent les directives du gouvernement français afin de vous aider à préparer, sereinement et sans excès, un kit d’urgence adapté à votre foyer.",
+    "cta": {
+      "text": "Voir le kit officiel recommandé",
+      "icon": "fa-solid fa-arrow-right",
+      "href": "https://www.info.gouv.fr/upload/media/content/0001/05/7f65dbb18642830b679cf048b0de025a801d93d1.pdf"
+    },
+    "image": {
+      "src": "/img/gouv-fr.webp",
+      "alt": "Gouvernement français"
+    },
+    "reassuranceImage": {
+      "src": "/img/home-reassurance.webp",
+      "alt": "Reassurance"
+    }
+  },
+  "crisisGuide": {
+    "title": "Notre guide pour vous accompagner",
+    "categories": [
+      {
+        "title": "Boire et manger",
+        "subtitle": "Des solutions simples et durables pour assurer l’essentiel, même quand l’approvisionnement devient difficile.",
+        "ctaText": "Que boire et manger",
+        "href": "/reserves-alimentaires",
+        "image": "/img/canned-food.webp"
+      },
+      {
+        "title": "Avoir chaud",
+        "subtitle": "Des équipements pensés pour vous protéger du froid et préserver votre énergie lorsque les conditions deviennent éprouvantes.",
+        "ctaText": "Se maintenir au chaud",
+        "href": "/divers",
+        "image": "/img/divers.webp"
+      },
+      {
+        "title": "Se soigner",
+        "subtitle": "Des trousses médicales complètes pour faire face aux petits accidents comme aux situations plus délicates.",
+        "ctaText": "Se soigner",
+        "href": "/trousse-secours",
+        "image": "/img/first-aid.webp"
+      },
+      {
+        "title": "S'informer",
+        "subtitle": "Des radios fiables pour rester connecté au monde, même sans réseau ni électricité.",
+        "ctaText": "S'informer",
+        "href": "/radios",
+        "image": "/img/radio.webp"
+      },
+      {
+        "title": "Se déplacer",
+        "subtitle": "Des sacs solides et bien pensés pour partir rapidement avec l’essentiel en toute sécurité.",
+        "ctaText": "Se déplacer",
+        "href": "/sacs-evacuation",
+        "image": "/img/back-pack.webp"
+      },
+      {
+        "title": "Avoir une autonomie énergétique",
+        "subtitle": "Des solutions simples pour garder vos appareils essentiels en fonctionnement lorsque l’électricité n’est plus disponible.",
+        "ctaText": "Autonomie énergétique",
+        "href": "/batteries",
+        "image": "/img/batteries.webp"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Ils nous font confiance",
+    "items": [
+      {
+        "name": "Robin",
+        "photo": "/img/test1.webp",
+        "text": "« Grâce à Equipetoi.fr, j’ai enfin compris quoi acheter pour être prêt sans me sentir dépassé. Les conseils sont clairs et vraiment rassurants. »"
+      },
+      {
+        "name": "Loïc",
+        "photo": "/img/test2.webp",
+        "text": "« Je ne savais pas par où commencer. Le guide m’a aidé à constituer un kit complet, simplement. On se sent vraiment accompagné. »"
+      },
+      {
+        "name": "Justine",
+        "photo": "/img/test3.webp",
+        "text": "« Des infos fiables, des liens directs, et surtout une approche humaine. On voit que l’objectif est d’aider, pas de faire peur. »"
+      }
+    ]
+  }
+}

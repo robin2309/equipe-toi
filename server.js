@@ -21,6 +21,7 @@ let headHtml = '';
 let ctaHtml = '';
 let aboutHtml = '';
 let headCommonHtml = '';
+let kit72hBannerHtml = '';
 try {
   navHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'nav.html'), 'utf8');
 } catch (err) {
@@ -51,6 +52,11 @@ try {
 } catch (err) {
   console.warn('head-common partial not found:', err.message);
 }
+try {
+  kit72hBannerHtml = fs.readFileSync(path.join(__dirname, 'src', 'partials', 'kit72h-banner.html'), 'utf8');
+} catch (err) {
+  console.warn('kit72h-banner partial not found:', err.message);
+}
 
 function renderPage(res, pageFilePath) {
   fs.readFile(pageFilePath, 'utf8', (err, data) => {
@@ -70,6 +76,7 @@ function renderPage(res, pageFilePath) {
     // Replace CTA and About placeholders if present
     out = out.replace(/<!--\s*inject:cta\s*-->/ig, ctaHtml);
     out = out.replace(/<!--\s*inject:about\s*-->/ig, aboutHtml);
+    out = out.replace(/<!--\s*inject:kit72h-banner\s*-->/ig, kit72hBannerHtml);
 
     // Insert footer before closing </body>
     out = out.replace(/<\/body>/i, footerHtml + '\n</body>');
@@ -109,6 +116,10 @@ app.get('/radios', (req, res) => {
 
 app.get('/divers', (req, res) => {
   renderPage(res, path.join(__dirname, 'src', 'divers.html'));
+});
+
+app.get('/kit-72h', (req, res) => {
+  renderPage(res, path.join(__dirname, 'src', 'kit-72h.html'));
 });
 
 // Fallback for 404
