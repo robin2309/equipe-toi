@@ -71,6 +71,17 @@ class ProductCard extends HTMLElement {
     this.$desc  = this.shadowRoot.querySelector('.product-description');
     this.$price = this.shadowRoot.querySelector('.product-price');
     this.$rating = this.shadowRoot.querySelector('.rating-value');
+
+    // Track Amazon button clicks with Google Analytics
+    this.$link.addEventListener('click', () => {
+      const productId = this.getAttribute('product-id') || 'unknown';
+      if (typeof gtag === 'function') {
+        gtag('event', productId, {
+          'event_category': 'amazon_click',
+          'event_label': this.getAttribute('title') || productId
+        });
+      }
+    });
   }
 
   connectedCallback() {
