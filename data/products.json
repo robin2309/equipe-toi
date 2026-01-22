@@ -60,7 +60,7 @@
     "image": "/img/products/radio-piles.webp",
     "title": "Mini Radio AM/FM – La Simplicité Qui Rassure",
     "amazon": "https://amzn.to/49OHkxN",
-    "description": "Une petite radio à piles, fiable et sans complications. Elle capte partout et offre la certitude de rester informé, même si votre téléphone ne capte plus ou n’a plus de batterie. Une solution minimaliste mais essentielle pour les situations imprévues.",
+    "description": "Une petite radio à piles, fiable et sans complications. Elle capte partout et offre la certitude de rester informé, même si votre téléphone ne capte plus ou n'a plus de batterie. Une solution minimaliste mais essentielle pour les situations imprévues.",
     "price": "16,99 €",
     "rating": "7"
   },
@@ -195,5 +195,39 @@
     "description": "Une ration simple, propre et végane, qui vous assure une journée complète d’énergie. Se conserve 20 ans, ne nécessite aucune préparation et se transporte facilement. Une base rassurante pour un kit alimentaire.",
     "price": "17,95 €",
     "rating": "8"
+  },
+
+  "ration-barre-chocolat": {
+    "id": "ration-barre-chocolat",
+    "page": "reserves-alimentaires",
+    "image": "/img/products/barre-chocolat-ration.webp",
+    "title": "Barres chocolat, Autonomie 72h",
+    "amazon": "https://amzn.to/4jq4BJc",
+    "description": "Une ration facile à transporter, se consomme sans cuisson. Contient 12 sachets de 120g chacun. Chaque sachet contient 475 kcal (5700 kcal pour 12 sachets). À raison de 4 sachets par jour, ce produit vous offre 72 heures d'autonomie alimentaire. Saveur chocolat pour un goût plus agréable.",
+    "price": "28,60 €",
+    "rating": "8"
+  },
+
+  "trousse-secours-l": {
+    "id": "trousse-secours-l",
+    "page": "trousse-secours",
+    "image": "/img/products/trousse-secours-l.webp",
+    "title": "Trousse de secours complète, légère et compacte",
+    "amazon": "https://amzn.to/4qd5Cqz",
+    "description": "Kit de secours complet et prêt à l'emploi: pansements, compresses, bandages, sérum physiologique, ciseaux, gants, arnica, tire-tique, aspirine, etc.",
+    "price": "44,99 €",
+    "rating": "8"
+  },
+  
+  "sac-a-dos-trek": {
+    "id": "sac-a-dos-trek",
+    "page": "sacs-evacuation",
+    "image": "/img/products/sacados40.webp",
+    "title": "Sac à dos tactique ultra résistant",
+    "amazon": "https://amzn.to/49JIKrG",
+    "description": "Sac à dos robuste et fonctionnel de 40 litres. Idéal pour transporter votre kit d'urgence : grande capacité, multiples compartiments, fixation MOLLE, confortable. Transportez vos réserves d'eau, de nourriture, votre trousse de secours et votre radio portable.",
+    "price": "49,90 €",
+    "rating": "8"
   }
+
 }

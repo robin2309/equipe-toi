@@ -4,9 +4,14 @@ document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelector('.nav-links');
   
   hamburger.addEventListener('click', function() {
+    console.log('hamburger clicked');
+    console.log(navLinks);
     navLinks.classList.toggle('active');
+    console.log(navLinks);
     const icon = hamburger.querySelector('i');
+    console.log(icon);
     icon.classList.toggle('fa-bars');
+    console.log(icon);
     icon.classList.toggle('fa-times');
   });
 

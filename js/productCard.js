@@ -17,10 +17,10 @@ class ProductCard extends HTMLElement {
           </a>
           <p class="product-description"></p>
           <div class="product-meta">
-            <div class="product-rating">
+            <!-- <div class="product-rating">
               <span class="rating-value"></span>
               <span class="rating-max">/10</span>
-            </div>
+            </div> -->
             <div class="product-price-container">
               <div class="product-price"></div>
               <div class="product-disclaimer-price">
@@ -132,9 +132,9 @@ class ProductCard extends HTMLElement {
     if (this.hasAttribute('price')) {
       this.$price.textContent = this.getAttribute('price');
     }
-    if (this.hasAttribute('rating')) {
-      this.$rating.textContent = this.getAttribute('rating');
-    }
+    // if (this.hasAttribute('rating')) {
+    //   this.$rating.textContent = this.getAttribute('rating');
+    // }
   }
 }
 
